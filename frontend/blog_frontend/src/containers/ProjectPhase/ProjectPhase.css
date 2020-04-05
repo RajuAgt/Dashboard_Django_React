@@ -1,0 +1,61 @@
+.container{
+  margin-top: 40px;
+  border: 1px solid gray;
+}
+#app {
+  margin-top: 40px;
+}
+.text-center {
+  border: 1px solid gray;
+}
+.circle-background,
+.circle-progress {
+  fill: none;
+}
+
+.ProjectBodyDiv {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.circle-background {
+  stroke: #ddd;
+}
+
+.circle-progress {
+  stroke: ForestGreen;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.circle-text {
+  font-size: 3em;
+  font-weight: bold;
+  fill: ForestGreen;
+}
+.phasename{
+   padding: 20px 55px;
+}
+.mainweek{
+  padding: 5px 5px;
+}
+.week1{
+  padding: 10px 10px;
+  margin-top: 35px;
+  border-radius: 25px;
+  border: 1px solid gray;
+  width:550px;
+  height:250px;
+  display: inline-block;
+  margin-right:1%;
+}
+.week1 h5{
+  font-size:15px;
+  color:black;
+}
+.top h2{
+  margin-bottom: 40px;
+}

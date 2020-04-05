@@ -1,0 +1,32 @@
+.TaskHeading {
+    margin-top: 40px;
+    font-family: "Cardo", serif;
+}
+.ProjectBodyDiv {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.Title {
+    font-family: "Cardo", serif;
+    color: rgb(32, 32, 32);
+}
+
+.ProjectBody {
+    font-size: 1.5em;
+    color: rgb(32, 32, 32);
+    font-family: "PT Sans", sans-serif;
+}
+
+.ProjectInfo {
+    font-size: 1.4em;
+    color: rgb(39, 39, 39);
+}
+
+.PublishedDate {
+    margin-top: -15px;
+    color: rgb(158, 158, 158);
+}
