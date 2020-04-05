@@ -55,28 +55,28 @@ const asyncProjectListDashboard = asyncComponent(() => {
     return import("./containers/Dashboard/ProjectList/ProjectList");
 });
 
-const asyncAdminViewAllPosts = asyncComponent(() => {
-    return import("./containers/AdminPanel/ProjectList/ProjectList");
+const asyncAdminViewAllProjects = asyncComponent(() => {
+    return import("./containers/AdminPanel/PostList/ProjectList");
 });
 
-const asyncPostEdit = asyncComponent(() => {
+const asyncProjectEdit = asyncComponent(() => {
     return import("./containers/Dashboard/ProjectEdit/ProjectEdit");
 });
 
-const asyncAdminEditPost = asyncComponent(() => {
-    return import("./containers/AdminPanel/EditProject/EditProject");
+const asyncAdminEditProject = asyncComponent(() => {
+    return import("./containers/AdminPanel/EditPost/EditProject");
 });
 
-const asyncAdminPostCommentsList = asyncComponent(() => {
-    return import("./containers/AdminPanel/ProjectTasksList/ProjectTasksList");
+const asyncAdminProjectTasksList = asyncComponent(() => {
+    return import("./containers/AdminPanel/PostCommentsList/ProjectTasksList");
 });
 
-const asyncAdminAllCommentsList = asyncComponent(() => {
-    return import("./containers/AdminPanel/AllTasksList/AllTasksList");
+const asyncAdminAllTasksList = asyncComponent(() => {
+    return import("./containers/AdminPanel/AllCommentsList/AllTasksList");
 });
 
-const asyncAdminCommentEdit = asyncComponent(() => {
-    return import("./containers/AdminPanel/TaskEdit/TaskEdit");
+const asyncAdminTaskEdit = asyncComponent(() => {
+    return import("./containers/AdminPanel/CommentEdit/TaskEdit");
 });
 
 
@@ -147,16 +147,14 @@ class App extends Component {
                 <Route path="/dashboard" component={asyncDashboard} />
                 <Route path="/projects/view/:slug/" component={ProjectBody} />
                 <Route path="/projects" component={ProjectList} />
-                <Route path="/posts/view/:slug/" component={PostBody} />
                 <Route path="/" component={PostProjects} />
             </Switch>
         );
 
         const routesForAnonymousUsers = (
             <Switch>
-                <Route path="/register" component={asyncUserRegistration} />
+                //<Route path="/register" component={asyncUserRegistration} />
                 <Route path="/login" component={asyncLogin} />
-                <Route path="/posts/view/:slug/" component={PostBody} />
                 <Route path="/" component={ProjectList} />
             </Switch>
         );

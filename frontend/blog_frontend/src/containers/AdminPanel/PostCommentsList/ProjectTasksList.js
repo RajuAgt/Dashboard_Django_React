@@ -73,7 +73,7 @@ class ProjectTasksList extends Component {
                             <Link
                                 to={
                                     "/admin-panel/tasks/edit/" +
-                                    comment.id +
+                                    task.id +
                                     "/"
                                 }
                             >

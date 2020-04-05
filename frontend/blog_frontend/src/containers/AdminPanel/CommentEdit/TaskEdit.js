@@ -219,8 +219,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAdminCommentEdit: (config, pk) =>
-            dispatch(actions.adminCommentEdit(config, pk))
+        onAdminTaskEdit: (config, pk) =>
+            dispatch(actions.adminTaskEdit(config, pk))
     };
 };
 

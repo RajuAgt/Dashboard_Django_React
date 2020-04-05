@@ -42,12 +42,7 @@ const navigationItems = props => {
                             >
                                 <NavigationItem>Login</NavigationItem>
                             </NavLink>
-                            <NavLink
-                                style={{ textDecoration: "none" }}
-                                to="/register"
-                            >
-                                <NavigationItem>Register</NavigationItem>
-                            </NavLink>
+                            
                         </Aux>
                     )}
                 </span>

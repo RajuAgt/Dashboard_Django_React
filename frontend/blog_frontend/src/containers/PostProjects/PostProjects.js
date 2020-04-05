@@ -5,7 +5,6 @@ import {XYPlot, XAxis, YAxis, HorizontalGridLines, HorizontalBarSeries, LineSeri
 
 import AxiosInstance from "../../AxiosInstance";
 import Spinner from "../../components/UI/Spinner/Spinner";
-import Posts from "../../components/Posts/Posts";
 import cssClass from "./PostProjects.css";
 import Timeline from "./timeline"
 import Outages from "./outages"
@@ -26,10 +25,6 @@ class PostList extends Component {
     }
 
     render() {
-        let postList = <Spinner />;
-        if (!this.state.loading && this.state.posts) {
-            postList = <Posts postList={this.state.posts} />;
-        }
 
         return (
           <div>
