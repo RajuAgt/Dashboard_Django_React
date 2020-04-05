@@ -2,28 +2,28 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import cssClass from "./PostList.css";
+import cssClass from "./ProjectList.css";
 import * as actions from "../../../store/actions/index";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
 import AxiosInstance from "../../../AxiosInstance";
 import Aux from "../../../hoc/Aux/Aux";
 
-class PostList extends Component {
-    getAllPosts = () => {
+class ProjectList extends Component {
+    getAllProjects = () => {
         const config = {
             headers: {
                 "Content-Type": "application/json",
                 AUTHORIZATION: "JWT " + this.props.token
             }
         };
-        this.props.onAdminViewAllPosts(config);
+        this.props.onAdminViewAllProjects(config);
     };
     componentDidMount() {
-        this.getAllPosts();
+        this.getAllProjects();
     }
 
-    postDeleteHandler = slug => {
+    projectDeleteHandler = slug => {
         const config = {
             headers: {
                 "Content-Type": "application/json",
@@ -31,16 +31,16 @@ class PostList extends Component {
             }
         };
 
-        let confirmation = window.confirm("Do You Want To Delete This Post?");
+        let confirmation = window.confirm("Do You Want To Delete This Project?");
 
         if (confirmation) {
             AxiosInstance.delete(
-                "/admin-panel/posts/view/" + slug + "/",
+                "/admin-panel/projects/view/" + slug + "/",
                 config
             )
                 .then(response => {
-                    alert("Post Deleted");
-                    this.getAllPosts();
+                    alert("Project Deleted");
+                    this.getAllProjects();
                 })
                 .catch(error => {
                     alert("Something Went Wrong");
@@ -49,58 +49,58 @@ class PostList extends Component {
     };
 
     render() {
-        let postsList = this.props.allPosts;
-        if (this.props.allPosts) {
-            postsList = this.props.allPosts.map(post => (
-                <tr key={post.slug}>
-                    <td>{post.title}</td>
-                    <td>{post.total_comments}</td>
-                    <td>{post.author_full_name}</td>
-                    {post.is_published ? (
+        let projectsList = this.props.allProjects;
+        if (this.props.allProjects) {
+            projectsList = this.props.allProjects.map(project => (
+                <tr key={project.slug}>
+                    <td>{project.title}</td>
+                    <td>{project.total_tasks}</td>
+                    <td>{project.author_full_name}</td>
+                    {project.is_published ? (
                         <td style={{ color: "green" }}>Published</td>
                     ) : (
                         <td style={{ color: "red" }}>Not Published</td>
                     )}
                     <td>
                         <div className={cssClass.Actions}>
-                            <Link to={"/admin-panel/posts/detail/" + post.slug}>
+                            <Link to={"/admin-panel/projects/detail/" + project.slug}>
                                 <Button>Edit</Button>
                             </Link>
                         </div>
                         <Button
                             red
-                            clicked={this.postDeleteHandler}
-                            identifier={post.slug}
+                            clicked={this.projectDeleteHandler}
+                            identifier={project.slug}
                         >
                             Delete
                         </Button>
                     </td>
                     <td>
-                        <Link to={"/admin-panel/comments/list/" + post.slug}>
-                            View Comments
+                        <Link to={"/admin-panel/tasks/list/" + project.slug}>
+                            View Tasks
                         </Link>
                     </td>
                 </tr>
             ));
         }
 
-        let postsListTable = <Spinner />;
+        let projectsListTable = <Spinner />;
 
-        if (!this.props.loading && this.props.allPosts) {
-            postsListTable = (
+        if (!this.props.loading && this.props.allProjects) {
+            projectsListTable = (
                 <div className={cssClass.OuterWrapper}>
                     <table className={cssClass.Table}>
                         <thead>
                             <tr>
                                 <th>Title</th>
-                                <th>Total Comments</th>
+                                <th>Total Tasks</th>
                                 <th>Author</th>
                                 <th>Status</th>
                                 <th>Actions</th>
-                                <th>Comments</th>
+                                <th>Tasks</th>
                             </tr>
                         </thead>
-                        <tbody>{postsList}</tbody>
+                        <tbody>{projectsList}</tbody>
                     </table>
                 </div>
             );
@@ -108,8 +108,8 @@ class PostList extends Component {
 
         return (
             <Aux>
-                <div className={cssClass.Title}>All Posts</div>
-                <div>{this.props.allPosts ? postsListTable : <Spinner />}</div>
+                <div className={cssClass.Title}>All Projects</div>
+                <div>{this.props.allProjects ? projectsListTable : <Spinner />}</div>
             </Aux>
         );
     }
@@ -119,18 +119,18 @@ const mapStateToProps = state => {
     return {
         token: state.auth.token,
         loading: state.admin.loading,
-        allPosts: state.admin.allPosts
+        allProjects: state.admin.allProjects
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAdminViewAllPosts: config =>
-            dispatch(actions.adminViewAllPosts(config))
+        onAdminViewAllProjects: config =>
+            dispatch(actions.adminViewAllProjects(config))
     };
 };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(PostList);
+)(ProjectList);

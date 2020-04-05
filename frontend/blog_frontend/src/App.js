@@ -5,10 +5,8 @@ import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
 import cssClass from "./App.css";
 import Layout from "./hoc/Layout/Layout";
-import PostList from "./containers/PostList/PostList";
 import PostProjects from "./containers/PostProjects/PostProjects";
 import ProjectList from "./containers/ProjectList/ProjectList";
-import PostBody from "./containers/PostBody/PostBody";
 import ProjectBody from "./containers/ProjectBody/ProjectBody";
 import asyncComponent from "./hoc/asyncComponent/asyncComponent";
 
@@ -22,14 +20,6 @@ const asyncDashboard = asyncComponent(() => {
 
 const asyncAdminPanel = asyncComponent(() => {
     return import("./containers/AdminPanel/AdminPanel");
-});
-
-const asyncCreatePost = asyncComponent(() => {
-    return import("./containers/CreatePost/CreatePost");
-});
-
-const asyncPostListDashboard = asyncComponent(() => {
-    return import("./containers/Dashboard/PostList/PostList");
 });
 
 const asyncUserProfileView = asyncComponent(() => {
@@ -48,32 +38,8 @@ const asyncAdminCreateUser = asyncComponent(() => {
     return import("./containers/AdminPanel/CreateUser/CreateUser");
 });
 
-const asyncAdminViewAllPosts = asyncComponent(() => {
-    return import("./containers/AdminPanel/PostList/PostList");
-});
-
-const asyncPostEdit = asyncComponent(() => {
-    return import("./containers/Dashboard/PostEdit/PostEdit");
-});
-
 const asyncAdminEditUser = asyncComponent(() => {
     return import("./containers/AdminPanel/EditUser/EditUser");
-});
-
-const asyncAdminEditPost = asyncComponent(() => {
-    return import("./containers/AdminPanel/EditPost/EditPost");
-});
-
-const asyncAdminPostCommentsList = asyncComponent(() => {
-    return import("./containers/AdminPanel/PostCommentsList/PostCommentsList");
-});
-
-const asyncAdminAllCommentsList = asyncComponent(() => {
-    return import("./containers/AdminPanel/AllCommentsList/AllCommentsList");
-});
-
-const asyncAdminCommentEdit = asyncComponent(() => {
-    return import("./containers/AdminPanel/CommentEdit/CommentEdit");
 });
 
 const asyncUserRegistration = asyncComponent(() => {
@@ -89,6 +55,31 @@ const asyncProjectListDashboard = asyncComponent(() => {
     return import("./containers/Dashboard/ProjectList/ProjectList");
 });
 
+const asyncAdminViewAllPosts = asyncComponent(() => {
+    return import("./containers/AdminPanel/ProjectList/ProjectList");
+});
+
+const asyncPostEdit = asyncComponent(() => {
+    return import("./containers/Dashboard/ProjectEdit/ProjectEdit");
+});
+
+const asyncAdminEditPost = asyncComponent(() => {
+    return import("./containers/AdminPanel/EditProject/EditProject");
+});
+
+const asyncAdminPostCommentsList = asyncComponent(() => {
+    return import("./containers/AdminPanel/ProjectTasksList/ProjectTasksList");
+});
+
+const asyncAdminAllCommentsList = asyncComponent(() => {
+    return import("./containers/AdminPanel/AllTasksList/AllTasksList");
+});
+
+const asyncAdminCommentEdit = asyncComponent(() => {
+    return import("./containers/AdminPanel/TaskEdit/TaskEdit");
+});
+
+
 class App extends Component {
     componentDidMount() {
         this.props.onCheckAuthStatus();
@@ -97,31 +88,12 @@ class App extends Component {
     render() {
         const routesForLoggedInUsers = (
             <Switch>
-                <Route
-                    path="/admin-panel/comments/edit/:pk"
-                    component={asyncAdminCommentEdit}
-                />
-                <Route
-                    path="/admin-panel/comments/list/all"
-                    component={asyncAdminAllCommentsList}
-                />
-                <Route
-                    path="/admin-panel/comments/list/:slug"
-                    component={asyncAdminPostCommentsList}
-                />
-                <Route
-                    path="/admin-panel/posts/detail/:slug"
-                    component={asyncAdminEditPost}
-                />
+
                 <Route
                     path="/admin-panel/users/detail/:pk"
                     component={asyncAdminEditUser}
                 />
-                <Route path="/:slug/edit" component={asyncPostEdit} />
-                <Route
-                    path="/admin-panel/all-posts"
-                    component={asyncAdminViewAllPosts}
-                />
+
                 <Route
                     path="/admin-panel/create-user"
                     component={asyncAdminCreateUser}
@@ -140,14 +112,6 @@ class App extends Component {
                     path="/dashboard/profile"
                     component={asyncUserProfileView}
                 />
-                <Route
-                    path="/dashboard/post-list"
-                    component={asyncPostListDashboard}
-                />
-                <Route
-                    path="/dashboard/create-new-post"
-                    component={asyncCreatePost}
-                />
 //Updated
                 <Route
                     path="/dashboard/project-list"
@@ -156,6 +120,27 @@ class App extends Component {
                 <Route
                     path="/dashboard/create-new-project"
                     component={asyncCreateProject}
+                />
+                <Route
+                    path="/admin-panel/tasks/edit/:pk"
+                    component={asyncAdminTaskEdit}
+                />
+                <Route
+                    path="/admin-panel/tasks/list/all"
+                    component={asyncAdminAllTasksList}
+                />
+                <Route
+                    path="/admin-panel/tasks/list/:slug"
+                    component={asyncAdminProjectTasksList}
+                />
+                <Route
+                    path="/admin-panel/projects/detail/:slug"
+                    component={asyncAdminEditProject}
+                />
+                <Route path="/:slug/edit" component={asyncProjectEdit} />
+                <Route
+                    path="/admin-panel/all-projects"
+                    component={asyncAdminViewAllProjects}
                 />
 
                 <Route path="/admin-panel" component={asyncAdminPanel} />

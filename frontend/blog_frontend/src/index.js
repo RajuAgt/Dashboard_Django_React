@@ -9,10 +9,8 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import AuthReducer from "./store/reducers/auth";
-import PostReducer from "./store/reducers/post";
 import UserReducer from "./store/reducers/user";
 import AdminReducer from "./store/reducers/admin";
-import CommentReducer from "./store/reducers/comment";
 import ProjectReducer from "./store/reducers/project";
 import TaskReducer from "./store/reducers/task";
 
@@ -20,10 +18,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootStore = combineReducers({
     auth: AuthReducer,
-    post: PostReducer,
     user: UserReducer,
     admin: AdminReducer,
-    comment: CommentReducer,
     project: ProjectReducer,
     task: TaskReducer
 });

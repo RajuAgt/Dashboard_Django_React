@@ -20,12 +20,10 @@ from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/', include('api.post.urls')),
     path('admin-panel/', include('api.admin.urls')),
     path('auth/', include('rest_auth.urls')),
     path('auth/registration/', include('rest_auth.registration.urls')),
     path('dashboard/', include('api.dashboard.urls')),
-    path('comments/', include('api.comment.urls')),
     path('docs/', include_docs_urls(title='Blog API Documentation')),
     path('register/', include('api.registration.urls')),
     path('projects/', include('api.project.urls')),

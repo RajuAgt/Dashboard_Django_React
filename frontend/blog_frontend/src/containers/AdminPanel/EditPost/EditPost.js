@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import cssClass from "./EditPost.css";
+import cssClass from "./EditProject.css";
 import AxiosInstance from "../../../AxiosInstance";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
@@ -10,10 +10,10 @@ import Aux from "../../../hoc/Aux/Aux";
 import * as actions from "../../../store/actions/index";
 import { checkValidity } from "../../../shared/checkValidity";
 
-class EditPost extends Component {
+class EditProject extends Component {
     state = {
-        editPostForm: null,
-        isEditPostFormValid: true
+        editProjectForm: null,
+        isEditProjectFormValid: true
     };
 
     componentDidMount() {
@@ -24,12 +24,12 @@ class EditPost extends Component {
             }
         };
         AxiosInstance.get(
-            "/admin-panel/posts/view/" + this.props.match.params.slug + "/",
+            "/admin-panel/projects/view/" + this.props.match.params.slug + "/",
             config
         )
             .then(response => {
                 this.setState({
-                    editPostForm: {
+                    editProjectForm: {
                         title: {
                             elementType: "input",
                             elementConfig: {
@@ -48,7 +48,7 @@ class EditPost extends Component {
                             elementType: "textarea",
                             elementConfig: {
                                 type: "textarea",
-                                placeholder: "Body Of The Post"
+                                placeholder: "Body Of The Project"
                             },
                             validation: {
                                 required: true,
@@ -109,14 +109,14 @@ class EditPost extends Component {
     }
 
     inputChangedHandler = (event, inputIndentifier) => {
-        const updatedEditPostForm = {
-            ...this.state.editPostForm
+        const updatedEditProjectForm = {
+            ...this.state.editProjectForm
         };
         const updatedFormElement = {
-            ...updatedEditPostForm[inputIndentifier]
+            ...updatedEditProjectForm[inputIndentifier]
         };
         if (inputIndentifier === "is_published") {
-            updatedFormElement.value = !this.state.editPostForm.is_published
+            updatedFormElement.value = !this.state.editProjectForm.is_published
                 .value;
             updatedFormElement.elementConfig.checked = updatedFormElement.value;
             updatedFormElement.touched = true;
@@ -128,23 +128,23 @@ class EditPost extends Component {
             );
             updatedFormElement.touched = true;
         }
-        updatedEditPostForm[inputIndentifier] = updatedFormElement;
+        updatedEditProjectForm[inputIndentifier] = updatedFormElement;
         let isFormValid = true;
-        for (let inputIndentifier in updatedEditPostForm) {
+        for (let inputIndentifier in updatedEditProjectForm) {
             isFormValid =
-                updatedEditPostForm[inputIndentifier].valid && isFormValid;
+                updatedEditProjectForm[inputIndentifier].valid && isFormValid;
         }
         this.setState({
-            editPostForm: updatedEditPostForm,
-            isEditPostFormValid: isFormValid
+            editProjectForm: updatedEditProjectForm,
+            isEditProjectFormValid: isFormValid
         });
     };
 
     onFormSubmitEventHandler = event => {
         event.preventDefault();
         let updatedForm = {};
-        for (let key in this.state.editPostForm) {
-            updatedForm[key] = this.state.editPostForm[key].value;
+        for (let key in this.state.editProjectForm) {
+            updatedForm[key] = this.state.editProjectForm[key].value;
         }
         const config = {
             headers: {
@@ -155,20 +155,20 @@ class EditPost extends Component {
                 ...updatedForm
             }
         };
-        this.props.onAdminEditPost(config, this.props.match.params.slug);
+        this.props.onAdminEditProject(config, this.props.match.params.slug);
     };
 
     render() {
         let formElements = [];
-        for (let key in this.state.editPostForm) {
+        for (let key in this.state.editProjectForm) {
             formElements.push({
                 id: key,
-                config: this.state.editPostForm[key]
+                config: this.state.editProjectForm[key]
             });
         }
 
         let form = <Spinner />;
-        if (this.state.editPostForm) {
+        if (this.state.editProjectForm) {
             form = (
                 <Aux>
                     <h1
@@ -177,7 +177,7 @@ class EditPost extends Component {
                             fontWeight: "200"
                         }}
                     >
-                        Edit Post
+                        Edit Project
                     </h1>
                     <form onSubmit={this.onFormSubmitEventHandler}>
                         {formElements.map(formElement => (
@@ -197,7 +197,7 @@ class EditPost extends Component {
                                 touched={formElement.config.touched}
                             />
                         ))}
-                        <Button disabled={!this.state.isEditPostFormValid}>
+                        <Button disabled={!this.state.isEditProjectFormValid}>
                             Submit
                         </Button>
                     </form>
@@ -221,12 +221,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAdminEditPost: (config, slug) =>
-            dispatch(actions.adminEditPost(config, slug))
+        onAdminEditProject: (config, slug) =>
+            dispatch(actions.adminEditProject(config, slug))
     };
 };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(EditPost);
+)(EditProject);

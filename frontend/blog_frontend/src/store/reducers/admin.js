@@ -76,39 +76,6 @@ const adminCreateUserFail = (state, action) => {
     });
 };
 
-const adminViewAllPostsInit = (state, action) => {
-    return updateObject(state, {
-        newUser: null,
-        userList: null,
-        loading: true,
-        error: null,
-        allPosts: null,
-        allProjects: null
-    });
-};
-
-const adminViewAllPostsSuccess = (state, action) => {
-    return updateObject(state, {
-        newUser: null,
-        userList: null,
-        loading: false,
-        error: null,
-        allPosts: action.postsData,
-        allProjects: null
-    });
-};
-
-const adminViewAllPostsFail = (state, action) => {
-    return updateObject(state, {
-        newUser: null,
-        userList: null,
-        loading: false,
-        error: action.error,
-        allPosts: null,
-        allProjects: null
-    });
-};
-
 const adminEditUserInit = (state, action) => {
     return updateObject(state, {
         newUser: null,
@@ -132,39 +99,6 @@ const adminEditUserSuccess = (state, action) => {
 };
 
 const adminEditUserFail = (state, action) => {
-    return updateObject(state, {
-        newUser: null,
-        userList: null,
-        loading: false,
-        error: action.error,
-        allPosts: null,
-        allProjects: null
-    });
-};
-
-const adminEditPostInit = (state, action) => {
-    return updateObject(state, {
-        newUser: null,
-        userList: null,
-        loading: true,
-        error: null,
-        allPosts: null,
-        allProjects: null
-    });
-};
-
-const adminEditPostSuccess = (state, action) => {
-    return updateObject(state, {
-        newUser: null,
-        userList: null,
-        loading: false,
-        error: null,
-        allPosts: null,
-        allProjects: null
-    });
-};
-
-const adminEditPostFail = (state, action) => {
     return updateObject(state, {
         newUser: null,
         userList: null,
@@ -256,24 +190,12 @@ const reducer = (state = initialState, action) => {
             return adminCreateUserSuccess(state, action);
         case actionTypes.ADMIN_CREATE_USER_FAIL:
             return adminCreateUserFail(state, action);
-        case actionTypes.ADMIN_VIEW_ALL_POSTS_INIT:
-            return adminViewAllPostsInit(state, action);
-        case actionTypes.ADMIN_VIEW_ALL_POSTS_SUCCESS:
-            return adminViewAllPostsSuccess(state, action);
-        case actionTypes.ADMIN_VIEW_ALL_POSTS_FAIL:
-            return adminViewAllPostsFail(state, action);
         case actionTypes.ADMIN_EDIT_USER_INIT:
             return adminEditUserInit(state, action);
         case actionTypes.ADMIN_EDIT_USER_SUCCESS:
             return adminEditUserSuccess(state, action);
         case actionTypes.ADMIN_EDIT_USER_FAIL:
             return adminEditUserFail(state, action);
-        case actionTypes.ADMIN_EDIT_POST_INIT:
-            return adminEditPostInit(state, action);
-        case actionTypes.ADMIN_EDIT_POST_SUCCESS:
-            return adminEditPostSuccess(state, action);
-        case actionTypes.ADMIN_EDIT_POST_FAIL:
-            return adminEditPostFail(state, action);
         case actionTypes.ADMIN_VIEW_ALL_PROJECTS_INIT:
             return adminViewAllProjectsInit(state, action);
         case actionTypes.ADMIN_VIEW_ALL_PROJECTS_SUCCESS:
@@ -285,7 +207,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.ADMIN_EDIT_PROJECT_SUCCESS:
             return adminEditProjectSuccess(state, action);
         case actionTypes.ADMIN_EDIT_PROJECT_FAIL:
-            return adminEditProjectFail(state, action);     
+            return adminEditProjectFail(state, action);
         default:
             return state;
     }

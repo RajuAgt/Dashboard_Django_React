@@ -34,28 +34,28 @@ class AdminPanel extends Component {
                     <div className={cssClass.InnerWrapper}>
                         <Link
                             style={{ textDecoration: "none", color: "black" }}
-                            to="/admin-panel/all-posts"
+                            to="/admin-panel/all-projects"
                         >
                             <div className={cssClass.Container}>
-                                View All Posts
+                                View All Projects
                             </div>
                         </Link>
                         <Link
                             style={{ textDecoration: "none", color: "black" }}
-                            to="/dashboard/create-new-post"
+                            to="/dashboard/create-new-project"
                         >
                             <div className={cssClass.Container}>
-                                Create A New Post
+                                Create A New Project
                             </div>
                         </Link>
                     </div>
                     <div className={cssClass.InnerWrapper}>
                         <Link
                             style={{ textDecoration: "none", color: "black" }}
-                            to="/admin-panel/comments/list/all"
+                            to="/admin-panel/tasks/list/all"
                         >
                             <div className={cssClass.Container}>
-                                View All Comments
+                                View All Tasks
                             </div>
                         </Link>
                     </div>

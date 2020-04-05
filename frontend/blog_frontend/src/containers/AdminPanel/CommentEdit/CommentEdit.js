@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import cssClass from "./CommentEdit.css";
+import cssClass from "./TaskEdit.css";
 import AxiosInstance from "../../../AxiosInstance";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
@@ -10,11 +10,11 @@ import Aux from "../../../hoc/Aux/Aux";
 import * as actions from "../../../store/actions/index";
 import {checkValidity} from "../../../shared/checkValidity";
 
-class EditPost extends Component {
+class EditProject extends Component {
     state = {
-        postTitle: null,
-        commentEditForm: null,
-        isCommentEditFormValid: true
+        projectTitle: null,
+        taskEditForm: null,
+        isTaskEditFormValid: true
     };
 
     componentDidMount() {
@@ -25,12 +25,12 @@ class EditPost extends Component {
             }
         };
         AxiosInstance.get(
-            "/admin-panel/comments/detail/" + this.props.match.params.pk + "/",
+            "/admin-panel/tasks/detail/" + this.props.match.params.pk + "/",
             config
         )
             .then(response => {
                 this.setState({
-                    commentEditForm: {
+                    taskEditForm: {
                         name: {
                             elementType: "input",
                             elementConfig: {
@@ -73,7 +73,7 @@ class EditPost extends Component {
                             elementType: "textarea",
                             elementConfig: {
                                 type: "textarea",
-                                placeholder: "Comment"
+                                placeholder: "Task"
                             },
                             value: response.data.body,
                             validation: {
@@ -98,7 +98,7 @@ class EditPost extends Component {
                             touched: true
                         }
                     },
-                    postTitle: response.data.post_title
+                    projectTitle: response.data.project_title
                 });
             })
             .catch(error => {
@@ -107,14 +107,14 @@ class EditPost extends Component {
     }
 
     inputChangedHandler = (event, inputIndentifier) => {
-        const updatedCommentEditForm = {
-            ...this.state.commentEditForm
+        const updatedTaskEditForm = {
+            ...this.state.taskEditForm
         };
         const updatedFormElement = {
-            ...updatedCommentEditForm[inputIndentifier]
+            ...updatedTaskEditForm[inputIndentifier]
         };
         if (inputIndentifier === "is_displayed") {
-            updatedFormElement.value = !this.state.commentEditForm.is_displayed
+            updatedFormElement.value = !this.state.taskEditForm.is_displayed
                 .value;
             updatedFormElement.elementConfig.checked = updatedFormElement.value;
             updatedFormElement.touched = true;
@@ -126,23 +126,23 @@ class EditPost extends Component {
             );
             updatedFormElement.touched = true;
         }
-        updatedCommentEditForm[inputIndentifier] = updatedFormElement;
+        updatedTaskEditForm[inputIndentifier] = updatedFormElement;
         let isFormValid = true;
-        for (let inputIndentifier in updatedCommentEditForm) {
+        for (let inputIndentifier in updatedTaskEditForm) {
             isFormValid =
-                updatedCommentEditForm[inputIndentifier].valid && isFormValid;
+                updatedTaskEditForm[inputIndentifier].valid && isFormValid;
         }
         this.setState({
-            commentEditForm: updatedCommentEditForm,
-            isCommentEditFormValid: isFormValid
+            taskEditForm: updatedTaskEditForm,
+            isTaskEditFormValid: isFormValid
         });
     };
 
     onFormSubmitEventHandler = event => {
         event.preventDefault();
         let updatedForm = {};
-        for (let key in this.state.commentEditForm) {
-            updatedForm[key] = this.state.commentEditForm[key].value;
+        for (let key in this.state.taskEditForm) {
+            updatedForm[key] = this.state.taskEditForm[key].value;
         }
         const config = {
             headers: {
@@ -153,20 +153,20 @@ class EditPost extends Component {
                 ...updatedForm
             }
         };
-        this.props.onAdminCommentEdit(config, this.props.match.params.pk);
+        this.props.onAdminTaskEdit(config, this.props.match.params.pk);
     };
 
     render() {
         let formElements = [];
-        for (let key in this.state.commentEditForm) {
+        for (let key in this.state.taskEditForm) {
             formElements.push({
                 id: key,
-                config: this.state.commentEditForm[key]
+                config: this.state.taskEditForm[key]
             });
         }
 
         let form = <Spinner />;
-        if (this.state.commentEditForm) {
+        if (this.state.taskEditForm) {
             form = (
                 <Aux>
                     <h1
@@ -175,7 +175,7 @@ class EditPost extends Component {
                             fontWeight: "200"
                         }}
                     >
-                        Edit Comment On "<strong>{this.state.postTitle}</strong>"
+                        Edit Task On "<strong>{this.state.projectTitle}</strong>"
                     </h1>
                     <form onSubmit={this.onFormSubmitEventHandler}>
                         {formElements.map(formElement => (
@@ -195,7 +195,7 @@ class EditPost extends Component {
                                 touched={formElement.config.touched}
                             />
                         ))}
-                        <Button disabled={!this.state.isCommentEditFormValid}>
+                        <Button disabled={!this.state.isTaskEditFormValid}>
                             Submit
                         </Button>
                     </form>
@@ -213,7 +213,7 @@ class EditPost extends Component {
 const mapStateToProps = state => {
     return {
         token: state.auth.token,
-        loading: state.comment.loading
+        loading: state.task.loading
     };
 };
 
@@ -227,4 +227,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(EditPost);
+)(EditProject);
