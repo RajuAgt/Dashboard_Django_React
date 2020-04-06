@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import NavigationItem from "./NavigationItem/NavigationItem";
 import cssClass from "./NavigationItems.css";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 
 const navigationItems = props => {
     return (
@@ -14,7 +14,7 @@ const navigationItems = props => {
                         <NavigationItem>Home</NavigationItem>
                     </NavLink>
                     {props.isAuth ? (
-                      <Aux>
+                      <Auz>
                         <NavLink
                             style={{ textDecoration: "none" }}
                             to="/dashboard"
@@ -33,17 +33,17 @@ const navigationItems = props => {
                         >
                             <NavigationItem>Logout</NavigationItem>
                         </NavLink>
-                      </Aux>
+                      </Auz>
                     ) : (
-                        <Aux>
+                        <Auz>
                             <NavLink
                                 style={{ textDecoration: "none" }}
                                 to="/login"
                             >
                                 <NavigationItem>Login</NavigationItem>
                             </NavLink>
-                            
-                        </Aux>
+
+                        </Auz>
                     )}
                 </span>
             </ul>

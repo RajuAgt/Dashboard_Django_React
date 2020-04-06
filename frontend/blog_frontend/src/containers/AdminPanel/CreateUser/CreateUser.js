@@ -5,7 +5,7 @@ import cssClass from "./CreateUser.css";
 import Input from "../../../components/UI/Input/Input";
 import Button from "../../../components/UI/Button/Button";
 import Spinner from "../../../components/UI/Spinner/Spinner";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 import * as actions from "../../../store/actions/index";
 import AxiosInstance from "../../../AxiosInstance";
 import { checkValidity } from "../../../shared/checkValidity";
@@ -175,7 +175,7 @@ class CreateUser extends Component {
         }
 
         let form = (
-            <Aux>
+            <Auz>
                 <h1
                     style={{
                         fontFamily: "Roboto, sans-serif",
@@ -203,11 +203,11 @@ class CreateUser extends Component {
                         Submit
                     </Button>
                 </form>
-            </Aux>
+            </Auz>
         );
 
         return (
-            <Aux>
+            <Auz>
                 <div>
                     {this.props.loading ? (
                         <Spinner />
@@ -215,7 +215,7 @@ class CreateUser extends Component {
                         <div className={cssClass.OuterWrapper}>{form}</div>
                     )}
                 </div>
-            </Aux>
+            </Auz>
         );
     }
 }

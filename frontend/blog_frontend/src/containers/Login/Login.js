@@ -6,7 +6,7 @@ import Input from "../../components/UI/Input/Input";
 import cssClass from "./Login.css";
 import * as actions from "../../store/actions/index";
 import Spinner from "../../components/UI/Spinner/Spinner";
-import Aux from "../../hoc/Aux/Aux";
+import Auz from "../../hoc/Auz/Auz";
 import Button from "../../components/UI/Button/Button";
 import {checkValidity} from "../../shared/checkValidity";
 
@@ -90,7 +90,7 @@ class Login extends Component {
         }
 
         let form = (
-            <Aux>
+            <Auz>
                 <h1
                     style={{
                         fontFamily: "Roboto, sans-serif",
@@ -118,11 +118,11 @@ class Login extends Component {
                         Login
                     </Button>
                 </form>
-            </Aux>
+            </Auz>
         );
 
         return (
-            <Aux>
+            <Auz>
                 {this.props.isAuth ? (
                     <Redirect to={this.props.loginRedirectURL} />
                 ) : null}
@@ -136,7 +136,7 @@ class Login extends Component {
                         <div className={cssClass.Container}>{form}</div>
                     )}
                 </div>
-            </Aux>
+            </Auz>
         );
     }
 }

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import cssClass from "./Dashboard.css";
 import { Redirect, Link } from "react-router-dom";
-import Aux from "../../hoc/Aux/Aux";
+import Auz from "../../hoc/Auz/Auz";
 import * as actions from "../../store/actions/index";
 
 class Dashboard extends Component {
@@ -14,7 +14,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <Aux>
+            <Auz>
                 {!this.props.isAuth ? <Redirect to="/" /> : null}
                 <div className={cssClass.Title}>
                     <p>Welcome {this.props.username}</p>
@@ -56,7 +56,7 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
-            </Aux>
+            </Auz>
         );
     }
 }

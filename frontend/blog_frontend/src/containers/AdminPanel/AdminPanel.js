@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import Aux from "../../hoc/Aux/Aux";
+import Auz from "../../hoc/Auz/Auz";
 import cssClass from "./AdminPanel.css";
 
 class AdminPanel extends Component {
     render() {
         return (
-            <Aux>
+            <Auz>
                 <div className={cssClass.Title}>
                     <p>Admin Panel</p>
                 </div>
@@ -60,7 +60,7 @@ class AdminPanel extends Component {
                         </Link>
                     </div>
                 </div>
-            </Aux>
+            </Auz>
         );
     }
 }

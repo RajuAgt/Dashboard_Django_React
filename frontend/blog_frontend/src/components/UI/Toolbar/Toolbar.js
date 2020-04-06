@@ -4,11 +4,11 @@ import NavigationItems from "../NavigationItems/NavigationItems";
 
 import cssClass from "./Toolbar.css";
 import HamburgerIcon from "../../../assets/images/hamburger.png";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 
 const toolbar = props => {
     return (
-        <Aux>
+        <Auz>
             <div className={cssClass.Toolbar}>
                 <div className={cssClass.NavigationItems}>
                     <NavigationItems isAuth={props.isAuth}/>
@@ -21,7 +21,7 @@ const toolbar = props => {
                     />
                 </div>
             </div>
-        </Aux>
+        </Auz>
     );
 };
 

@@ -4,7 +4,7 @@ import AxiosInstance from "../../AxiosInstance";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import cssClass from "./ProjectBody.css";
 import HR from "../../components/UI/HR/HR";
-import Aux from "../../hoc/Aux/Aux";
+import Auz from "../../hoc/Auz/Auz";
 import Tasks from "../../components/Tasks/Tasks";
 import TaskForm from "../CreateTask/CreateTask";
 import ProjectPhase from "../ProjectPhase/ProjectPhase";
@@ -46,7 +46,7 @@ class ProjectBody extends Component {
         let projectBody = <Spinner />;
         if (!this.state.loading && this.state.projectBody) {
             projectBody = (
-                <Aux>
+                <Auz>
                     <div className={cssClass.ProjectBodyDiv}>
                         <h1 className={cssClass.Title}>
                             {this.state.projectBody.projectTitle}
@@ -76,7 +76,7 @@ class ProjectBody extends Component {
                         slug={this.props.match.params.slug}
                         refresh={this.renderWholePage}
                     />
-                </Aux>
+                </Auz>
             );
         }
 

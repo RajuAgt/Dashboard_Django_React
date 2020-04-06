@@ -6,7 +6,7 @@ import * as actions from "../../../store/actions/index";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
 import Input from "../../../components/UI/Input/Input";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 import cssClass from "./UserProfileEdit.css";
 import {checkValidity} from "../../../shared/checkValidity";
 
@@ -166,7 +166,7 @@ class UserProfileEdit extends Component {
         }
 
         let form = (
-            <Aux>
+            <Auz>
                 {!this.props.userProfile ? <Redirect to="/dashboard" /> : null}
                 <h1
                     style={{
@@ -195,7 +195,7 @@ class UserProfileEdit extends Component {
                         Submit
                     </Button>
                 </form>
-            </Aux>
+            </Auz>
         );
 
         if (this.props.loading) {

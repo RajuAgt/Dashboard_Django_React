@@ -7,7 +7,7 @@ import * as actions from "../../../store/actions/index";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
 import AxiosInstance from "../../../AxiosInstance";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 
 class ProjectTasksList extends Component {
     getAllTasks = () => {
@@ -111,12 +111,12 @@ class ProjectTasksList extends Component {
         }
 
         return (
-            <Aux>
+            <Auz>
                 <div className={cssClass.Title}>Tasks List</div>
                 <div>
                     {this.props.allTasks ? tasksListTable : <Spinner />}
                 </div>
-            </Aux>
+            </Auz>
         );
     }
 }

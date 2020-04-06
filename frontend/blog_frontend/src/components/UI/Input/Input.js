@@ -1,7 +1,7 @@
 import React from "react";
 
 import cssClass from "./Input.css";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 
 const input = props => {
     const inputClasses = [];
@@ -32,7 +32,7 @@ const input = props => {
         case "checkbox":
             inputClasses.push(cssClass.Checkbox);
             return (
-                <Aux>
+                <Auz>
                     <input
                         className={inputClasses.join(" ")}
                         {...props.elementConfig}
@@ -43,7 +43,7 @@ const input = props => {
                         {props.elementConfig.label}
                     </span>
                     <br />
-                </Aux>
+                </Auz>
             );
         default:
             inputClasses.push(cssClass.TextField);

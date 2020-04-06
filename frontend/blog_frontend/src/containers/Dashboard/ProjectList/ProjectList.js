@@ -9,7 +9,7 @@ import * as actions from "../../../store/actions/index";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
 import AxiosInstance from "../../../AxiosInstance";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 
 class ProjectList extends Component {
     getProjectsList = () => {
@@ -123,10 +123,10 @@ class ProjectList extends Component {
         }
 
         return (
-            <Aux>
+            <Auz>
                 <div className={cssClass.Title}>Projects List</div>
                 <div>{userProjectsListTable}</div>
-            </Aux>
+            </Auz>
         );
     }
 }

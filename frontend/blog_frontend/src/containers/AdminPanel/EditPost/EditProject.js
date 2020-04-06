@@ -6,7 +6,7 @@ import AxiosInstance from "../../../AxiosInstance";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
 import Input from "../../../components/UI/Input/Input";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 import * as actions from "../../../store/actions/index";
 import { checkValidity } from "../../../shared/checkValidity";
 
@@ -170,7 +170,7 @@ class EditProject extends Component {
         let form = <Spinner />;
         if (this.state.editProjectForm) {
             form = (
-                <Aux>
+                <Auz>
                     <h1
                         style={{
                             fontFamily: "Roboto, sans-serif",
@@ -201,7 +201,7 @@ class EditProject extends Component {
                             Submit
                         </Button>
                     </form>
-                </Aux>
+                </Auz>
             );
         }
         return this.props.loading ? (

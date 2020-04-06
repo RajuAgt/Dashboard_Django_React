@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import cssClass from "./UserProfileView.css";
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import * as actions from "../../../store/actions/index";
-import Aux from "../../../hoc/Aux/Aux";
+import Auz from "../../../hoc/Auz/Auz";
 import Button from "../../../components/UI/Button/Button";
 
 class UserProfileView extends Component {
@@ -27,7 +27,7 @@ class UserProfileView extends Component {
         let profile = null;
         if (this.props.userProfile) {
             profile = (
-                <Aux>
+                <Auz>
                     <table className={cssClass.Table}>
                         <tbody>
                             <tr>
@@ -89,7 +89,7 @@ class UserProfileView extends Component {
                             />
                         </a>
                     ) : null}
-                </Aux>
+                </Auz>
             );
         }
 
@@ -97,7 +97,7 @@ class UserProfileView extends Component {
             profile = <Spinner />;
         }
         return (
-            <Aux>
+            <Auz>
                 <div className={cssClass.Title}>Your Profile</div>
                 <div className={cssClass.OuterWrapper}>{profile}</div>
                 <div className={cssClass.Edit}>
@@ -105,7 +105,7 @@ class UserProfileView extends Component {
                         <Button disabled={false}>Edit Profile</Button>
                     </Link>
                 </div>
-            </Aux>
+            </Auz>
         );
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import Aux from "../Aux/Aux";
+import Auz from "../Auz/Auz";
 import Toobar from "../../components/UI/Toolbar/Toolbar";
 import Sidebar from "../../components/UI/Sidebar/Sidebar";
 import Logo from "../../components/UI/Logo/Logo";
@@ -23,7 +23,7 @@ class Layout extends Component {
 
     render() {
         return (
-            <Aux>
+            <Auz>
                 <Logo />
                 <Toobar
                     clicked={this.SidebarToggleHandler}
@@ -39,7 +39,7 @@ class Layout extends Component {
                     clicked={this.SidebarToggleHandler}
                 />
                 <main>{this.props.children}</main>
-            </Aux>
+            </Auz>
         );
     }
 }

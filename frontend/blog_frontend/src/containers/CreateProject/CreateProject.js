@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import cssClass from "./CreateProject.css";
-import Aux from "../../hoc/Aux/Aux";
+import Auz from "../../hoc/Auz/Auz";
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
 import * as actions from "../../store/actions/index";
@@ -113,7 +113,7 @@ class CreateProject extends Component {
         let form = <Spinner />;
         if (this.state.projectCreationForm) {
             form = (
-                <Aux>
+                <Auz>
                     <h1
                         style={{
                             fontFamily: "Roboto, sans-serif",
@@ -144,7 +144,7 @@ class CreateProject extends Component {
                             Submit
                         </Button>
                     </form>
-                </Aux>
+                </Auz>
             );
         }
 
