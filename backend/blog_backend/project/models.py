@@ -30,6 +30,7 @@ class Project(models.Model):
     def __str__(self):
         return self.projectTitle
 
+    # Tasks
     @property
     def tasks_list(self):
         return self.tasks.filter(is_displayed=True)
@@ -37,6 +38,15 @@ class Project(models.Model):
     @property
     def total_tasks(self):
         return self.tasks_list.count()
+
+    # Deliverable
+    @property
+    def deliverables_list(self):
+        return self.deliverables.filter(is_displayed=True)
+
+    @property
+    def total_deliverables(self):
+        return self.deliverables.count()
 
     @property
     def author_full_name(self):

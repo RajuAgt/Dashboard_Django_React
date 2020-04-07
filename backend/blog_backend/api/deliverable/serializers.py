@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from task.models import Deliverable
+from deliverable.models import Deliverable
 
 
 class DeliverableSerializer(serializers.ModelSerializer):
