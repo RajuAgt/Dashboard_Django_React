@@ -24,3 +24,9 @@ export {
     adminTaskListLoad,
     adminTaskEdit
 } from "./task";
+
+export {
+    createDeliverable,
+    adminDeliverableListLoad,
+    adminDeliverableEdit
+} from "./deliverable";

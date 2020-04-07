@@ -86,15 +86,14 @@ class ProjectBody extends Component {
                     </div>
 
                     <Tasks tasksList={this.state.tasks} />
-                    <TaskForm
-                        slug={this.props.match.params.slug}
-                        refresh={this.renderWholePage}
-                    />
+                    <div className={cssClass.ProjectBodyDiv}>
+                        <h1 className={cssClass.TaskHeading}>
+                            Deliverables:
+                        </h1>
+                    </div>
 
-                    <h1 className={cssClass.TaskHeading}>
-                        Tasks:
-                    </h1>
                     <Deliverables deliverablesList={this.state.deliverables} />
+
                 </Auz>
             );
         }
