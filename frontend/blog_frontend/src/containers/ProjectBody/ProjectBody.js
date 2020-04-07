@@ -7,13 +7,16 @@ import HR from "../../components/UI/HR/HR";
 import Auz from "../../hoc/Auz/Auz";
 import Tasks from "../../components/Tasks/Tasks";
 import TaskForm from "../CreateTask/CreateTask";
+import Deliverables from "../../components/Deliverables/Deliverables";
+import DeliverableForm from "../CreateDeliverable/CreateDeliverable";
 import ProjectPhase from "../ProjectPhase/ProjectPhase";
 
 class ProjectBody extends Component {
     state = {
         loading: true,
         projectBody: null,
-        tasks: null
+        tasks: null,
+        deliverables: null
     };
 
     getProjectBody = () => {
@@ -34,9 +37,20 @@ class ProjectBody extends Component {
             });
     };
 
+    getDeliverablesList = () => {
+        AxiosInstance.get("deliverables/" + this.props.match.params.slug + "/")
+            .then(response => {
+                this.setState({ deliverables: response.data });
+            })
+            .catch(error => {
+                alert("Error Loading Deliverables. Try Again..!!");
+            });
+    };
+
     renderWholePage = () => {
         this.getProjectBody();
         this.getTasksList();
+        this.getDeliverablesList();
     };
     componentDidMount() {
         this.renderWholePage();
@@ -76,6 +90,11 @@ class ProjectBody extends Component {
                         slug={this.props.match.params.slug}
                         refresh={this.renderWholePage}
                     />
+
+                    <h1 className={cssClass.TaskHeading}>
+                        Tasks:
+                    </h1>
+                    <Deliverables deliverablesList={this.state.deliverables} />
                 </Auz>
             );
         }
