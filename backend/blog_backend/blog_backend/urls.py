@@ -28,4 +28,5 @@ urlpatterns = [
     path('register/', include('api.registration.urls')),
     path('projects/', include('api.project.urls')),
     path('tasks/', include('api.task.urls')),
+    path('deliverables/', include('api.deliverable.urls')),
 ]
