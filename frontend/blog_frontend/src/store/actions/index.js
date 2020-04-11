@@ -42,3 +42,9 @@ export {
     adminActionListLoad,
     adminActionEdit
 } from "./action";
+
+export {
+    createIssue,
+    adminIssueListLoad,
+    adminIssueEdit
+} from "./issue";

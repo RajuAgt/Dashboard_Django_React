@@ -124,7 +124,7 @@ export const ADMIN_RISK_EDIT_INIT             = "ADMIN_RISK_EDIT_INIT";
 export const ADMIN_RISK_EDIT_SUCCESS          = "ADMIN_RISK_EDIT_SUCCESS";
 export const ADMIN_RISK_EDIT_FAIL             = "ADMIN_RISK_EDIT_FAIL";
 
-// A tion
+// Action
 export const CREATE_ACTION_INIT                 = "CREATE_ACTION_INIT";
 export const CREATE_ACTION_SUCCESS              = "CREATE_ACTION_SUCCESS";
 export const CREATE_ACTION_FAIL                 = "CREATE_ACTION_FAIL";
@@ -136,3 +136,16 @@ export const ADMIN_ACTION_LIST_LOAD_FAIL        = "ADMIN_ACTION_LIST_LOAD_FAIL";
 export const ADMIN_ACTION_EDIT_INIT             = "ADMIN_ACTION_EDIT_INIT";
 export const ADMIN_ACTION_EDIT_SUCCESS          = "ADMIN_ACTION_EDIT_SUCCESS";
 export const ADMIN_ACTION_EDIT_FAIL             = "ADMIN_ACTION_EDIT_FAIL";
+
+// Issue
+export const CREATE_ISSUE_INIT                 = "CREATE_ISSUE_INIT";
+export const CREATE_ISSUE_SUCCESS              = "CREATE_ISSUE_SUCCESS";
+export const CREATE_ISSUE_FAIL                 = "CREATE_ISSUE_FAIL";
+
+export const ADMIN_ISSUE_LIST_LOAD_INIT        = "ADMIN_ISSUE_LIST_LOAD_INIT";
+export const ADMIN_ISSUE_LIST_LOAD_SUCCESS     = "ADMIN_ISSUE_LIST_LOAD_SUCCESS";
+export const ADMIN_ISSUE_LIST_LOAD_FAIL        = "ADMIN_ISSUE_LIST_LOAD_FAIL";
+
+export const ADMIN_ISSUE_EDIT_INIT             = "ADMIN_ISSUE_EDIT_INIT";
+export const ADMIN_ISSUE_EDIT_SUCCESS          = "ADMIN_ISSUE_EDIT_SUCCESS";
+export const ADMIN_ISSUE_EDIT_FAIL             = "ADMIN_ISSUE_EDIT_FAIL";

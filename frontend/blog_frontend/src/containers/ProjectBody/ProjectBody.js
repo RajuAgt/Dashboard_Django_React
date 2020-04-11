@@ -13,6 +13,8 @@ import Risks from "../../components/Risks/Risks";
 import RiskForm from "../CreateRisk/CreateRisk";
 import Actions from "../../components/Actions/Actions";
 import ActionForm from "../CreateAction/CreateAction";
+import Issues from "../../components/Issues/Issues";
+import IssueForm from "../CreateIssue/CreateIssue";
 import ProjectPhase from "../ProjectPhase/ProjectPhase";
 
 class ProjectBody extends Component {
@@ -22,7 +24,8 @@ class ProjectBody extends Component {
         tasks: null,
         deliverables: null,
         risks: null,
-        action: null
+        action: null,
+        issue: null
     };
 
     getProjectBody = () => {
@@ -73,12 +76,24 @@ class ProjectBody extends Component {
             });
     };
 
+    getIssuesList = () => {
+        AxiosInstance.get("issues/" + this.props.match.params.slug + "/")
+            .then(response => {
+                this.setState({ issues: response.data });
+            })
+            .catch(error => {
+                alert("Error Loading Issues. Try Again..!!");
+            });
+    };
+
+
     renderWholePage = () => {
         this.getProjectBody();
         this.getTasksList();
         this.getDeliverablesList();
         this.getRisksList();
         this.getActionsList();
+        this.getIssuesList();
     };
     componentDidMount() {
         this.renderWholePage();
@@ -137,6 +152,14 @@ class ProjectBody extends Component {
                     </div>
 
                     <Actions actionsList={this.state.actions} />
+
+                    <div className={cssClass.ProjectBodyDiv}>
+                        <h1 className={cssClass.TaskHeading}>
+                            Issues:
+                        </h1>
+                    </div>
+
+                    <Issues issuesList={this.state.issues} />
 
                 </Auz>
             );
