@@ -66,6 +66,15 @@ class Project(models.Model):
     def total_actions(self):
         return self.actions_list.count()
 
+    # Issues
+    @property
+    def issues_list(self):
+        return self.issues.filter(is_displayed=True)
+
+    @property
+    def total_issues(self):
+        return self.issues_list.count()
+
 
     @property
     def author_full_name(self):

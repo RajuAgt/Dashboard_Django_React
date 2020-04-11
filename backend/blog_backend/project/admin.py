@@ -5,6 +5,7 @@ from task.models import Task
 from deliverable.models import Deliverable
 from risk.models import Risk
 from action.models import Action
+from issue.models import Issue
 
 
 class TaskInline(admin.StackedInline):
@@ -18,6 +19,9 @@ class RiskInline(admin.StackedInline):
 
 class ActionInline(admin.StackedInline):
     model = Action
+
+class IssueInline(admin.StackedInline):
+    model = Issue
 
 class ProjectAdmin(admin.ModelAdmin):
 
@@ -63,6 +67,17 @@ class ProjectAdmin(admin.ModelAdmin):
         ActionInline,
     ]
     list_display = ['projectTitle', 'projectName', 'is_published', 'project_action_count']
+
+    # Issue
+    def project_issue_count(self, obj):
+        return Issue.objects.filter(project=obj).count()
+
+    project_issue_count.short_description = 'Total Issue'
+
+    inlines = [
+        IssueInline,
+    ]
+    list_display = ['projectTitle', 'projectName', 'is_published', 'project_issue_count']
 
 
 admin.site.register(Project, ProjectAdmin)

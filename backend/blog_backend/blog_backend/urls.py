@@ -31,4 +31,5 @@ urlpatterns = [
     path('deliverables/', include('api.deliverable.urls')),
     path('risks/', include('api.risk.urls')),
     path('actions/', include('api.action.urls')),
+    path('issues/', include('api.issue.urls')),
 ]
