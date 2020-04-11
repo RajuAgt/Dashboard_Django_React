@@ -36,3 +36,9 @@ export {
     adminRiskListLoad,
     adminRiskEdit
 } from "./risk";
+
+export {
+    createAction,
+    adminActionListLoad,
+    adminActionEdit
+} from "./action";
