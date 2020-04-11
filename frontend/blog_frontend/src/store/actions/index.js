@@ -30,3 +30,9 @@ export {
     adminDeliverableListLoad,
     adminDeliverableEdit
 } from "./deliverable";
+
+export {
+    createRisk,
+    adminRiskListLoad,
+    adminRiskEdit
+} from "./risk";

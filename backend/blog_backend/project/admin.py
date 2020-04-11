@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import Project
 from task.models import Task
 from deliverable.models import Deliverable
+from risk.models import Risk
 
 
 class TaskInline(admin.StackedInline):
@@ -10,6 +11,9 @@ class TaskInline(admin.StackedInline):
 
 class DeliverableInline(admin.StackedInline):
     model = Deliverable
+
+class RiskInline(admin.StackedInline):
+    model = Risk
 
 class ProjectAdmin(admin.ModelAdmin):
 
@@ -33,6 +37,18 @@ class ProjectAdmin(admin.ModelAdmin):
         DeliverableInline,
     ]
     list_display = ['projectTitle', 'projectName', 'is_published', 'project_deliverable_count']
+
+    # Risk
+    def project_risk_count(self, obj):
+        return Risk.objects.filter(project=obj).count()
+
+    project_risk_count.short_description = 'Total Risk'
+
+    inlines = [
+        RiskInline,
+    ]
+    list_display = ['projectTitle', 'projectName', 'is_published', 'project_risk_count']
+
 
 
 admin.site.register(Project, ProjectAdmin)

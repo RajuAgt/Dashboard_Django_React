@@ -48,6 +48,16 @@ class Project(models.Model):
     def total_deliverables(self):
         return self.deliverables.count()
 
+    # Risks
+    @property
+    def risks_list(self):
+        return self.risks.filter(is_displayed=True)
+
+    @property
+    def total_risks(self):
+        return self.risks_list.count()
+
+
     @property
     def author_full_name(self):
         try:
