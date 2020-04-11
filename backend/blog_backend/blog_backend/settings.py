@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'task',
     'deliverable',
     'risk',
+    'action',
     'corsheaders',
     'user_profile',
     'rest_framework.authtoken',

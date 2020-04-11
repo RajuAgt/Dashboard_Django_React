@@ -57,6 +57,15 @@ class Project(models.Model):
     def total_risks(self):
         return self.risks_list.count()
 
+    # Actions
+    @property
+    def actions_list(self):
+        return self.actions.filter(is_displayed=True)
+
+    @property
+    def total_actions(self):
+        return self.actions_list.count()
+
 
     @property
     def author_full_name(self):
