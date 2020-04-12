@@ -88,7 +88,6 @@ const action = props => {
         </ExpansionPanelDetails>
         <Divider />
         <ExpansionPanelActions>
-          <Button size="small">Cancel</Button>
           <Button size="small" color="primary">
             Completed
           </Button>
