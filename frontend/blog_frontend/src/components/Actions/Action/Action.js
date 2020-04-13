@@ -68,10 +68,13 @@ const action = props => {
           id="panel1c-header"
         >
           <div className={classes.column}>
-            <Typography className={classes.heading}>Status</Typography>
+            <Typography className={classes.heading}>{props.actionStatus}</Typography>
           </div>
           <div className={classes.column}>
             <Typography className={classes.secondaryHeading}>{props.actionName}</Typography>
+          </div>
+          <div className={classes.column}>
+            <Typography className={classes.secondaryHeading}>{props.assignedTo}</Typography>
           </div>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.details}>

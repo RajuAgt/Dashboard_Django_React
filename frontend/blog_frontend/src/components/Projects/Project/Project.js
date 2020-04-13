@@ -59,7 +59,7 @@ const project = props => {
                     Manager: {props.author}
                     <br />
                     Last updated On:{" "}
-                    {new Date(props.datePublished).toDateString()}
+                    {new Date(props.last_edited).toDateString()}
                     <br />
                     {props.totalTasks}{" "}
                     {props.totalTasks == 1 ? "Task" : "Tasks"}

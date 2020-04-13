@@ -10,6 +10,14 @@
     padding-right: 40px;
 }
 
+.ProjectBodyDivN {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 .Title {
     font-family: "Cardo", serif;
     color: rgb(32, 32, 32);

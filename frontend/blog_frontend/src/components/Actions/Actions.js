@@ -10,6 +10,8 @@ const actions = props => {
                 actionName={action.actionName}
                 actionBody={action.actionBody}
                 publishedOn={action.published_on}
+                actionStatus={action.actionStatus}
+                assignedTo={action.assignedTo}
             />
         </Auz>
     ));

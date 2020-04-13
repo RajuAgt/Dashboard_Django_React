@@ -8,7 +8,7 @@ class ActionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Action
-        fields = ['actionName', 'website', 'actionBody', 'published_on']
+        fields = ['actionName', 'actionBody', 'assignedTo', 'email', 'actionStatus', 'published_on']
 
 
 class ActionCreateSerializer(serializers.ModelSerializer):
@@ -16,4 +16,4 @@ class ActionCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Action
-        fields = ['actionName', 'website', 'actionBody', 'project', 'email']
+        fields = ['actionName', 'project', 'actionBody', 'assignedTo', 'email', 'actionStatus']

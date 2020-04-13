@@ -120,16 +120,14 @@ class ProjectBody extends Component {
                         <HR />
                         <ProjectPhase />
                         <HR />
-                        <div className={cssClass.ProjectInfo}>
-                            <p> - {this.state.projectBody.author_full_name}</p>
-                        </div>
+
                         <h1 className={cssClass.TaskHeading}>
                             Tasks: {this.state.projectBody.total_tasks}
                         </h1>
                     </div>
 
                     <Tasks tasksList={this.state.tasks} />
-                    <div className={cssClass.ProjectBodyDiv}>
+                    <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
                             Deliverables:
                         </h1>
@@ -137,7 +135,7 @@ class ProjectBody extends Component {
 
                     <Deliverables deliverablesList={this.state.deliverables} />
 
-                    <div className={cssClass.ProjectBodyDiv}>
+                    <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
                             Risks:
                         </h1>
@@ -145,7 +143,7 @@ class ProjectBody extends Component {
 
                     <Risks risksList={this.state.risks} />
 
-                    <div className={cssClass.ProjectBodyDiv}>
+                    <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
                             Actions:
                         </h1>
@@ -153,7 +151,7 @@ class ProjectBody extends Component {
 
                     <Actions actionsList={this.state.actions} />
 
-                    <div className={cssClass.ProjectBodyDiv}>
+                    <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
                             Issues:
                         </h1>

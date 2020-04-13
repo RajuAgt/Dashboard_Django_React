@@ -15,6 +15,7 @@ const projects = props => {
                 totalComments={project.total_tasks}
                 author={project.author_full_name}
                 short_description={project.projectName}
+                last_edited = {project.last_edited}
             />
         ));
     } else {

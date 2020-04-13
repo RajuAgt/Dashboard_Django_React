@@ -13,7 +13,7 @@ class ProjectListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ['slug', 'projectTitle', 'projectName',
-                  'total_tasks', 'author_full_name', 'published_on']
+                  'total_tasks', 'author_full_name', 'published_on', 'last_edited']
 
 
 class ProjectDetailSerializer(serializers.ModelSerializer):
@@ -26,4 +26,4 @@ class ProjectDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ['slug', 'projectTitle', 'projectName', 'author_full_name',
-                  'published_on', 'tasks_list', 'projectName', 'total_tasks']
+                  'published_on', 'tasks_list', 'projectName', 'total_tasks', 'last_edited']
