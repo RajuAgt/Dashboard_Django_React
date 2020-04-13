@@ -110,7 +110,7 @@ class ProjectBody extends Component {
                         </h1>
                         <p className={cssClass.PublishedDate}>
                             {new Date(
-                                this.state.projectBody.published_on
+                                this.state.projectBody.last_edited
                             ).toDateString()}
                         </p>
                         <HR />

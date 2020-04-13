@@ -32,4 +32,5 @@ urlpatterns = [
     path('risks/', include('api.risk.urls')),
     path('actions/', include('api.action.urls')),
     path('issues/', include('api.issue.urls')),
+    path('phases/', include('api.phase.urls')),
 ]

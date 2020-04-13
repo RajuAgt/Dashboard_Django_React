@@ -61,8 +61,6 @@ const project = props => {
                     Last updated On:{" "}
                     {new Date(props.last_edited).toDateString()}
                     <br />
-                    {props.totalTasks}{" "}
-                    {props.totalTasks == 1 ? "Task" : "Tasks"}
                 </div>
             </div>
         </article>
