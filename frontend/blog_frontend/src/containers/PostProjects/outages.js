@@ -16,24 +16,24 @@ const projectEventsDCExit = [
         endTime: "2020-01-08T14:00:00Z",
         title: "UAT Preparation",
         description: "Preparation activities for Testing",
-        completed: true,
-        type: "Planned"
+        status: "Completed",
+        RAGx: "Green"
     },
     {
         startTime: "2020-01-09T03:30:00Z",
         endTime: "2020-04-10T16:50:00Z",
         title: "UAT Execution",
         description: "UAT Testcase Execution",
-        completed: false,
-        type: "Unplanned"
+        status: "InProgess",
+        RAGx: "Green"
     },
     {
         startTime: "2020-04-11T03:30:00Z",
         endTime: "2020-07-05T13:00:00Z",
         description: "Project Support",
         title: "Project Support",
-        completed: true,
-        type: "Unplanned"
+        status: "YetToStart",
+        RAGx: ''
     }
 ];
 
@@ -43,37 +43,45 @@ const projectEventsNOCC = [
         endTime: "2019-12-20T14:00:00Z",
         title: "Requirement Gathering",
         description: "Project Requirements gathering",
-        completed: true,
-        type: "Planned"
+        status: "Completed",
+        RAGx: "Green"
     },
     {
         startTime: "2019-12-21T03:30:00Z",
         endTime: "2020-03-15T16:50:00Z",
         title: "Solution Design",
         description: "Design activities",
-        completed: true,
-        type: "Unplanned"
+        status: "Completed",
+        RAGx: "Green"
     },
     {
         startTime: "2020-03-16T03:30:00Z",
         endTime: "2020-05-08T13:00:00Z",
         description: "Development Phase",
         title: "Coding and Unit Testing",
-        completed: true,
-        type: "Unplanned"
+        status: "InProgess",
+        RAGx: "Red"
+    },
+    {
+        startTime: "2020-05-09T03:30:00Z",
+        endTime: "2020-08-08T13:00:00Z",
+        description: "Development Phase",
+        title: "Coding and Unit Testing",
+        status: "YetToStart",
+        RAGx: ""
     }
 ];
 //
 // Turn data into TimeSeries
 //
 
-const events = projectEventsDCExit.map(
+let events = projectEventsDCExit.map(
     ({ startTime, endTime, ...data }) =>
         new TimeRangeEvent(new TimeRange(new Date(startTime), new Date(endTime)), data)
 );
 const seriesDCExit = new TimeSeries({ name: "outages", events });
 
-const events1 = projectEventsNOCC.map(
+events = projectEventsNOCC.map(
     ({ startTime, endTime, ...data }) =>
         new TimeRangeEvent(new TimeRange(new Date(startTime), new Date(endTime)), data)
 );
@@ -85,7 +93,22 @@ const seriesNOCC = new TimeSeries( { name: "outages", events } );
 //
 
 function outageEventStyleFunc(event, state) {
-    const color = event.get("type") === "Planned" ? "#998ec3" : "#f1a340";
+    let color = null;
+    if(event.get("status") === "Completed"){
+        color = "#ADD8E6";
+    } else if(event.get("status") === "InProgess"){
+
+        if(event.get("RAGx") === "Red"){
+            color = "#FF0000";
+        }else if(event.get("RAGx") === "Amber"){
+            color = "#FFBF00";
+        }else{
+            color = "#008000";
+        }
+
+    }else{
+        color = "#808080";
+    }
     switch (state) {
         case "normal":
             return {
@@ -140,16 +163,19 @@ export default class Outages extends React.Component{
                                             style={outageEventStyleFunc}
                                             label={e => e.get("title")}
                                         />
+
                                     </Charts>
                                 </ChartRow>
                                 <ChartRow height="30">
                                     <Charts>
                                         <EventChart
                                             series={seriesNOCC}
+                                            visible={true}
                                             size={45}
                                             style={outageEventStyleFunc}
                                             label={e => e.get("title")}
                                         />
+
                                     </Charts>
                                 </ChartRow>
                             </ChartContainer>
