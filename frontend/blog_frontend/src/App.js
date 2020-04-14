@@ -8,6 +8,7 @@ import Layout from "./hoc/Layout/Layout";
 import PostProjects from "./containers/PostProjects/PostProjects";
 import ProjectList from "./containers/ProjectList/ProjectList";
 import ProjectBody from "./containers/ProjectBody/ProjectBody";
+import HomePage from "./containers/HomePage/HomePage";
 import asyncComponent from "./hoc/asyncComponent/asyncComponent";
 
 const asyncLogin = asyncComponent(() => {
@@ -155,7 +156,7 @@ class App extends Component {
             <Switch>
                 //<Route path="/register" component={asyncUserRegistration} />
                 <Route path="/login" component={asyncLogin} />
-                <Route path="/" component={ProjectList} />
+                <Route path="/" component={HomePage} />
             </Switch>
         );
         return (
