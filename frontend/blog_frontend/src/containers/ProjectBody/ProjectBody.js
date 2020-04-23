@@ -122,7 +122,7 @@ class ProjectBody extends Component {
                         <HR />
 
                         <h1 className={cssClass.TaskHeading}>
-                            Tasks: {this.state.projectBody.total_tasks}
+                            Key Highlights: {this.state.projectBody.total_tasks}
                         </h1>
                     </div>
 
@@ -143,14 +143,7 @@ class ProjectBody extends Component {
 
                     <Risks risksList={this.state.risks} />
 
-                    <div className={cssClass.ProjectBodyDivN}>
-                        <h1 className={cssClass.TaskHeading}>
-                            Actions:
-                        </h1>
-                    </div>
-
-                    <Actions actionsList={this.state.actions} />
-
+                  
                     <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
                             Issues:
