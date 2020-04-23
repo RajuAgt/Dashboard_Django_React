@@ -113,6 +113,13 @@ const useStyles = makeStyles(theme => ({
     overflow: 'auto',
     flexDirection: 'column',
   },
+  paperX: {
+    padding: theme.spacing(2),
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column',
+    height: 240,
+  },
   fixedHeight: {
     height: 240,
   },
@@ -153,8 +160,8 @@ export default function Dashboard() {
 
             {/* Recent Orders */}
             <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Orders />
+              <Paper className={classes.paperX}>
+
               </Paper>
             </Grid>
           </Grid>

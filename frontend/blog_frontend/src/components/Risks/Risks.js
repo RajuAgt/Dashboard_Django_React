@@ -10,6 +10,13 @@ const risks = props => {
                 riskName={risk.riskName}
                 riskBody={risk.riskBody}
                 publishedOn={risk.published_on}
+                phaseDetected={risk.phaseDetected}
+                impact={risk.impact}
+                probability={risk.probability}
+                owner={risk.owner}
+                prjectPhase={risk.prjectPhase}
+                mitigation={risk.mitigation}
+                impactDate={risk.impactDate}
             />
         </Auz>
     ));

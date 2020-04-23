@@ -8,7 +8,8 @@ class RiskSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Risk
-        fields = ['riskName', 'website', 'riskBody', 'published_on']
+        fields = ['riskName', 'riskBody', 'phaseDetected', 'impact', 'probability', 'owner', 'prjectPhase',
+        'mitigation', 'impactDate', 'published_on']
 
 
 class RiskCreateSerializer(serializers.ModelSerializer):
@@ -16,4 +17,5 @@ class RiskCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Risk
-        fields = ['riskName', 'website', 'riskBody', 'project', 'email']
+        fields = ['riskName', 'riskBody', 'project', 'riskBody', 'phaseDetected', 'impact', 'probability', 'owner', 'prjectPhase',
+        'mitigation', 'impactDate']
