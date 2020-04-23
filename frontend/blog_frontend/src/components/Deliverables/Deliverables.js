@@ -37,8 +37,21 @@ const useStyles = makeStyles({
   },
 });
 
+function styleFunc(deliverable) {
+    let color = null;
+    if(deliverable.get("statusRAG") === "Green"){
+        color = "	#00FF00";
+    } else if(deliverable.get("statusRAG") === "Amber"){
+        color = "#FFBF00";
+    }else if(deliverable.get("statusRAG") === "Red"){
+        color = "#FF0000";
+    }
+}
+
+
 const deliverables = props => {
   const classes = useStyles();
+  
     return (
     <TableContainer>
       <Table className={classes.table} aria-label="customized table">
@@ -46,7 +59,10 @@ const deliverables = props => {
           <TableRow>
             <StyledTableCell>Category</StyledTableCell>
             <StyledTableCell>Deliverable</StyledTableCell>
-            <StyledTableCell>Date</StyledTableCell>
+            <StyledTableCell>Planned Date</StyledTableCell>
+            <StyledTableCell>Revised Date</StyledTableCell>
+            <StyledTableCell>Comments</StyledTableCell>
+            <StyledTableCell>RAG Status</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -56,7 +72,10 @@ const deliverables = props => {
                 {deliverable.deliverableName}
               </StyledTableCell>
               <StyledTableCell>{deliverable.deliverableBody}</StyledTableCell>
-              <StyledTableCell>{new Date(deliverable.published_on).toDateString()}</StyledTableCell>
+              <StyledTableCell>{new Date(deliverable.planDate).toDateString()}</StyledTableCell>
+              <StyledTableCell>{new Date(deliverable.reviseDate).toDateString()}</StyledTableCell>
+              <StyledTableCell>{deliverable.comments}</StyledTableCell>
+              <TableCell style={{backgroundColor:deliverable.statusRAG}}>{deliverable.statusRAG}</TableCell>
             </StyledTableRow>
           ))}
         </TableBody>
