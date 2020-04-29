@@ -15,7 +15,8 @@ import Actions from "../../components/Actions/Actions";
 import ActionForm from "../CreateAction/CreateAction";
 import Issues from "../../components/Issues/Issues";
 import IssueForm from "../CreateIssue/CreateIssue";
-import ProjectPhase from "../ProjectPhase/ProjectPhase";
+import Phases from "../../components/Phases/Phases";
+import Phases0 from "../../components/Phases/Phases0";
 
 import Kanban from "./Kanban";
 
@@ -26,8 +27,9 @@ class ProjectBody extends Component {
         tasks: null,
         deliverables: null,
         risks: null,
-        action: null,
-        issue: null
+        actions: null,
+        issues: null,
+        phases: null
     };
 
     getProjectBody = () => {
@@ -88,6 +90,16 @@ class ProjectBody extends Component {
             });
     };
 
+    getPhasesList = () => {
+        AxiosInstance.get("phases/" + this.props.match.params.slug + "/")
+            .then(response => {
+                this.setState({ phases: response.data });
+            })
+            .catch(error => {
+                alert("Error Loading Phases. Try Again..!!");
+            });
+    };
+
 
     renderWholePage = () => {
         this.getProjectBody();
@@ -96,6 +108,7 @@ class ProjectBody extends Component {
         this.getRisksList();
         this.getActionsList();
         this.getIssuesList();
+        this.getPhasesList();
     };
     componentDidMount() {
         this.renderWholePage();
@@ -120,7 +133,7 @@ class ProjectBody extends Component {
                             {this.state.projectBody.projectName}
                         </p>
                         <HR />
-                        <ProjectPhase />
+                        <Phases />
                         <HR />
 
                         <h1 className={cssClass.TaskHeading}>
@@ -129,6 +142,15 @@ class ProjectBody extends Component {
                     </div>
 
                     <Tasks tasksList={this.state.tasks} />
+
+                    <div className={cssClass.ProjectBodyDivN}>
+                        <h1 className={cssClass.TaskHeading}>
+                            Phases:
+                        </h1>
+                    </div>
+
+                    <Phases0 phasesList={this.state.phases} />
+
                     <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
                             Deliverables:
@@ -162,6 +184,8 @@ class ProjectBody extends Component {
                     </div>
 
                     <Issues issuesList={this.state.issues} />
+
+
 
 
                 </Auz>

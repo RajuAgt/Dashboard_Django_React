@@ -1,5 +1,5 @@
 import React from "react";
-import cssClass from "./ProjectPhase.css";
+import cssClass from "./Phases.css";
 
 import { render } from "react-dom";
 import Table from '@material-ui/core/Table';

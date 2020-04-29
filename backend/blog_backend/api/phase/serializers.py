@@ -8,7 +8,8 @@ class PhaseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Phase
-        fields = ['projectPhase', 'startDate', 'endDate', 'status', 'published_on']
+        fields = ['projectPhase', 'startDate', 'endDate', 'startDateRev', 'endDateRev',
+         'duration', 'comments', 'statusRAG', 'status', 'published_on']
 
 
 class PhaseCreateSerializer(serializers.ModelSerializer):
@@ -16,4 +17,5 @@ class PhaseCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Phase
-        fields = ['projectPhase', 'startDate', 'endDate', 'status', 'project']
+        fields = ['projectPhase', 'startDate', 'endDate', 'startDateRev', 'endDateRev',
+         'duration', 'comments', 'statusRAG', 'status', 'project']
