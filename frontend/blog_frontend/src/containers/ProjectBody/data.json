@@ -1,0 +1,116 @@
+{
+  "lanes": [
+    {
+      "id": "TODO",
+      "title": "To Do",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "TSCharge",
+          "title": "TS Charge Calculation",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        }
+      ]
+    },
+    {
+      "id": "CODING",
+      "title": "Coding",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "GemWork",
+          "title": "Gemini Work item",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        },
+        {
+          "id": "UniqueSite",
+          "title": "Unique site setup",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        }
+      ]
+    },
+    {
+      "id": "CODEREVIEW",
+      "title": "Code Review",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "DistMatrix",
+          "title": "Distance Matrix",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        },
+        {
+          "id": "RateForm",
+          "title": "Rate formula",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        },
+        {
+          "id": "EQCalc",
+          "title": "EQ Calculation",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        },
+        {
+          "id": "EliQty",
+          "title": "Eligible Quantity Report",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        },
+        {
+          "id": "NOCCReport",
+          "title": "NOCC Report screen",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        }
+      ]
+    },
+    {
+      "id": "DEPLOY",
+      "title": "Deployment",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "RestMaster",
+          "title": "Restful Master script",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        },
+        {
+          "id": "DimRam",
+          "title": "DIM and RAM",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        }
+      ]
+    },
+    {
+      "id": "UNITTEST",
+      "title": "Unit Testing",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "NOCCParam",
+          "title": "NOCC Parameter",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        },
+        {
+          "id": "ExistContr",
+          "title": "Existing Contracts",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        },
+        {
+          "id": "TRIG",
+          "title": "Triggers",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        }
+      ]
+    },
+    {
+      "id": "PEERTEST",
+      "title": "Peer Testing",
+      "style": {"width": 280},
+      "cards": [
+        {
+          "id": "Others",
+          "title": "All Requirements",
+          "cardStyle": { "width": 150, "maxWidth": 150, "margin": "auto", "marginBottom": 5 }
+        }
+      ]
+    }
+  ]
+}

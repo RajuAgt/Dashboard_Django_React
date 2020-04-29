@@ -17,6 +17,8 @@ import Issues from "../../components/Issues/Issues";
 import IssueForm from "../CreateIssue/CreateIssue";
 import ProjectPhase from "../ProjectPhase/ProjectPhase";
 
+import Kanban from "./Kanban";
+
 class ProjectBody extends Component {
     state = {
         loading: true,
@@ -137,13 +139,22 @@ class ProjectBody extends Component {
 
                     <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
+                            Cut Tracker:
+                        </h1>
+                    </div>
+                    <div className={cssClass.ProjectBodyDivN}>
+                        <Kanban />
+                    </div>
+
+                    <div className={cssClass.ProjectBodyDivN}>
+                        <h1 className={cssClass.TaskHeading}>
                             Risks:
                         </h1>
                     </div>
 
                     <Risks risksList={this.state.risks} />
 
-                  
+
                     <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
                             Issues:
@@ -151,6 +162,7 @@ class ProjectBody extends Component {
                     </div>
 
                     <Issues issuesList={this.state.issues} />
+
 
                 </Auz>
             );
