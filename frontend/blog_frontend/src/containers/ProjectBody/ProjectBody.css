@@ -3,7 +3,7 @@
     font-family: "Cardo", serif;
 }
 .ProjectBodyDiv {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding-top: 90px;
     padding-left: 40px;
@@ -11,9 +11,17 @@
 }
 
 .ProjectBodyDivN {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+..ProjectBodyDivNX {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5px;
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -45,4 +53,20 @@
 .PublishedDate {
     margin-top: -15px;
     color: rgb(158, 158, 158);
+}
+
+.container {
+   display: flex;
+}
+
+.containerLeft {
+   flex: 0 0 50%;
+   display: flex;
+   justify-content: flex-start;
+}
+
+.containerRight {
+   flex: 0 0 50%;
+   display: flex;
+   justify-content: flex-end;
 }

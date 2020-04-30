@@ -18,7 +18,15 @@ import IssueForm from "../CreateIssue/CreateIssue";
 import Phases from "../../components/Phases/Phases";
 import Phases0 from "../../components/Phases/Phases0";
 
+import Button from '@material-ui/core/Button';
+
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+
 import Kanban from "./Kanban";
+
+function myFunction() {
+  window.print();
+};
 
 class ProjectBody extends Component {
     state = {
@@ -123,11 +131,23 @@ class ProjectBody extends Component {
                         <h1 className={cssClass.Title}>
                             {this.state.projectBody.projectTitle}
                         </h1>
-                        <p className={cssClass.PublishedDate}>
-                            {new Date(
-                                this.state.projectBody.last_edited
-                            ).toDateString()}
-                        </p>
+                        <div className={cssClass.container}>
+
+                            <div className={cssClass.containerLeft}>
+                                <p className={cssClass.PublishedDate}>
+                                    {new Date(
+                                        this.state.projectBody.last_edited
+                                    ).toDateString()}
+                                </p>
+                            </div>
+
+                            <div className={cssClass.containerRight} onclick="myFunction()">
+                            <Button variant="outlined" color="primary" onClick={myFunction}>
+                              Generate report
+                            </Button>
+                            </div>
+                        </div>
+
                         <HR />
                         <p className={cssClass.ProjectBody}>
                             {this.state.projectBody.projectName}
@@ -145,16 +165,27 @@ class ProjectBody extends Component {
 
                     <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
-                            Phases:
+                            Detailed Plan:
                         </h1>
                     </div>
 
                     <Phases0 phasesList={this.state.phases} />
 
                     <div className={cssClass.ProjectBodyDivN}>
-                        <h1 className={cssClass.TaskHeading}>
-                            Deliverables:
-                        </h1>
+                            <div className={cssClass.containerLeft}>
+                                <h1 className={cssClass.TaskHeading}>
+                                    Deliverables:
+                                </h1>
+                            </div>
+                            <div className={cssClass.containerRight}>
+                                <ReactHTMLTableToExcel
+                                              id="test-table-xls-button"
+                                              className="download-table-xls-button"
+                                              table="table-to-xls"
+                                              filename="Deliverables"
+                                              sheet="Deliverables"
+                                              buttonText="Download"/>
+                            </div>
                     </div>
 
                     <Deliverables deliverablesList={this.state.deliverables} />
@@ -172,9 +203,10 @@ class ProjectBody extends Component {
                         <h1 className={cssClass.TaskHeading}>
                             Risks:
                         </h1>
+
                     </div>
 
-                    <Risks risksList={this.state.risks} />
+                    <Risks risksList={this.state.risks}/>
 
 
                     <div className={cssClass.ProjectBodyDivN}>

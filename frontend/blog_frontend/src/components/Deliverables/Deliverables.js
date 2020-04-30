@@ -32,7 +32,7 @@ const StyledTableRow = withStyles(theme => ({
 
 const useStyles = makeStyles({
   table: {
-    width: '70%',
+    width: '80%',
     margin: '25px auto',
   },
 });
@@ -51,10 +51,11 @@ function styleFunc(deliverable) {
 
 const deliverables = props => {
   const classes = useStyles();
-  
+
     return (
     <TableContainer>
-      <Table className={classes.table} aria-label="customized table">
+      <Table className={classes.table} aria-label="customized table" id="table-to-xls">
+
         <TableHead>
           <TableRow>
             <StyledTableCell>Category</StyledTableCell>
@@ -80,6 +81,7 @@ const deliverables = props => {
           ))}
         </TableBody>
       </Table>
+
     </TableContainer>
   );
 };
