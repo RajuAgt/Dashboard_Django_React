@@ -21,6 +21,7 @@ class Project(models.Model):
     status = models.TextField()
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='projects', related_query_name='project')
+    clientManager = models.CharField(max_length=100, null=True)    
     slug = models.SlugField(blank=True, null=True)
     is_published = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)

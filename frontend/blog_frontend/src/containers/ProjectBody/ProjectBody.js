@@ -142,7 +142,7 @@ class ProjectBody extends Component {
                             </div>
 
                             <div className={cssClass.containerRight} onclick="myFunction()">
-                            <Button variant="outlined" color="primary" onClick={myFunction}>
+                            <Button variant="outlined" color="primary"  onClick={myFunction}>
                               Generate report
                             </Button>
                             </div>

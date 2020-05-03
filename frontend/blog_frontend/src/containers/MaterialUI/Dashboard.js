@@ -29,9 +29,10 @@ function Copyright() {
       {'Copyright © '}
       <Link color="inherit" href="https://wipro.com/">
         Wipro Confidential
-      </Link>{' '} Update
-      {new Date().toString()}
-      {'.'}
+      </Link>
+      <Typography variant="body2" color="textSecondary" align="right">
+      {'   '} Last Update on {new Date().toDateString()} {'.'}
+      </Typography>
     </Typography>
   );
 }

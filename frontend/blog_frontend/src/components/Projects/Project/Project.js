@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Button from "../../UI/Button/Button";
 import cssClass from "./Project.css";
+import Table from '@material-ui/core/Table';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+import Button from '@material-ui/core/Button';
 
 const project = props => {
     const articleClass = [
@@ -51,16 +54,28 @@ const project = props => {
                 </p>
                 <Link to={"projects/view/" + props.slug}>
                     <div className={cssClass.ReadFullPost}>
-                        <Button>Open Project</Button>
+                        <Button variant="outlined" color="primary">
+                          View Report
+                        </Button>
                     </div>
                 </Link>
                 <br />
                 <div className={cssClass.ProjectInfo}>
-                    Manager: {props.author}
-                    <br />
-                    Last updated On:{" "}
-                    {new Date(props.last_edited).toDateString()}
-                    <br />
+                    <Table size='small' width='150'>
+                      <TableRow>
+                        <TableCell width='120'>Wipro PM</TableCell>
+                        <TableCell>: {props.author}</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell size='small'>Xoserve PM</TableCell>
+                        <TableCell>: {props.clientManager}</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell size='small'>Last updated On</TableCell>
+                        <TableCell>:{" "}
+                        {new Date(props.last_edited).toDateString()}</TableCell>
+                      </TableRow>
+                    </Table>
                 </div>
             </div>
         </article>

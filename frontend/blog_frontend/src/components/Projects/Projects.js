@@ -14,6 +14,7 @@ const projects = props => {
                 datePublished={project.published_on}
                 totalComments={project.total_tasks}
                 author={project.author_full_name}
+                clientManager={project.clientManager}
                 short_description={project.projectName}
                 last_edited = {project.last_edited}
             />
