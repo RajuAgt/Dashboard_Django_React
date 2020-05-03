@@ -99,11 +99,11 @@ function outageEventStyleFunc(event, state) {
     } else if(event.get("status") === "InProgess"){
 
         if(event.get("RAGx") === "Red"){
-            color = "#FF0000";
+            color = "#cd5c5c";
         }else if(event.get("RAGx") === "Amber"){
             color = "#FFBF00";
         }else{
-            color = "#008000";
+            color = "#3b7a57";
         }
 
     }else{

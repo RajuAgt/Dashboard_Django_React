@@ -8,8 +8,8 @@ class DeliverableSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Deliverable
-        fields = ['deliverableName', 'deliverableBody', 'planDate', 'reviseDate', 'comments',
-        'statusRAG', 'published_on']
+        fields = ['deliverableName', 'deliverableBody', 'planDate', 'reviseDate', 'deliveredDate',
+        'comments', 'statusRAG', 'published_on']
 
 
 class DeliverableCreateSerializer(serializers.ModelSerializer):
@@ -17,5 +17,5 @@ class DeliverableCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Deliverable
-        fields = ['deliverableName', 'deliverableBody', 'project', 'planDate', 'reviseDate', 'comments',
-        'statusRAG']
+        fields = ['deliverableName', 'deliverableBody', 'project', 'planDate', 'reviseDate', 'deliveredDate',
+        'comments', 'statusRAG']

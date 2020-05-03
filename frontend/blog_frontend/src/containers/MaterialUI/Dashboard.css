@@ -1,0 +1,57 @@
+.root: {
+  display: 'flex';
+  paddingRight: 240;
+}
+
+.toolbar: {
+  paddingRight: 24, // keep right padding when drawer closed
+}
+
+
+
+
+.menuButton: {
+  marginRight: 36,
+}
+
+.menuButtonHidden: {
+  display: 'none',
+}
+
+.title: {
+  flexGrow: 1,
+}
+
+
+.appBarSpacer: theme.mixins.toolbar,
+content: {
+  flexGrow: 1;
+  height: 100vh;
+  overflow: auto;
+    paddingRight: 240;
+  //paddingLeft: 140;
+},
+
+.container: {
+  paddingTop: theme.spacing(4);
+  paddingBottom: theme.spacing(4);
+    paddingRight: theme.spacing(240);
+}
+
+.paper: {
+  padding: theme.spacing(2);
+  display: flex;
+  overflow: auto;
+  flexDirection: column;
+}
+
+.paperX {
+  padding: theme.spacing(2);
+  display: flex;
+  overflow: auto;
+  height: 300;
+}
+
+.fixedHeight: {
+  height: 240,
+}
