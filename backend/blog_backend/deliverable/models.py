@@ -15,7 +15,7 @@ class Deliverable(models.Model):
     deliverableBody = models.TextField()
     planDate = models.DateTimeField()
     reviseDate = models.DateTimeField()
-    deliveredDate = models.DateTimeField()
+    deliveredDate = models.DateTimeField(null=True, blank=True)
     comments = models.CharField(max_length=100)
     statusRAG = models.CharField(max_length=10, choices = RAG_OPTIONS)
     project = models.ForeignKey(Project, on_delete=models.CASCADE,

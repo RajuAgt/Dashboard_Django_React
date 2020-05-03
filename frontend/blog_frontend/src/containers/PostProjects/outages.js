@@ -95,19 +95,19 @@ const seriesNOCC = new TimeSeries( { name: "outages", events } );
 function outageEventStyleFunc(event, state) {
     let color = null;
     if(event.get("status") === "Completed"){
-        color = "#ADD8E6";
+        color = "#264653";
     } else if(event.get("status") === "InProgess"){
 
         if(event.get("RAGx") === "Red"){
-            color = "#cd5c5c";
+            color = "#d62828";
         }else if(event.get("RAGx") === "Amber"){
-            color = "#FFBF00";
+            color = "#f77f00";
         }else{
-            color = "#3b7a57";
+            color = "#2a9d8f";
         }
 
     }else{
-        color = "#808080";
+        color = "#8D99AE";
     }
     switch (state) {
         case "normal":
@@ -180,6 +180,7 @@ export default class Outages extends React.Component{
                                 </ChartRow>
                             </ChartContainer>
                         </Resizable>
+
                     </div>
                 </div>
             </div>

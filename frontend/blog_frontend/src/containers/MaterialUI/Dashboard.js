@@ -27,10 +27,10 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
+      <Link color="inherit" href="https://wipro.com/">
+        Wipro Confidential
+      </Link>{' '} Update
+      {new Date().toString()}
       {'.'}
     </Typography>
   );
@@ -113,6 +113,7 @@ const useStyles = makeStyles(theme => ({
     overflow: 'auto',
     flexDirection: 'column',
     borderStyle: 'none',
+    backgroundColor: '#fafafa',
   },
   paperX: {
     padding: theme.spacing(2),
@@ -120,6 +121,7 @@ const useStyles = makeStyles(theme => ({
     overflow: 'auto',
     flexDirection: 'column',
     height: 300,
+    backgroundColor: '#fafafa',
   },
   fixedHeight: {
     height: 240,
@@ -139,23 +141,35 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid>
+
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
                 <Chart />
               </Paper>
             </Grid>
-
+            {/* Recent Deposits */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <Deposits />
+              </Paper>
+            </Grid>
             {/* Recent Orders */}
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <Paper className={classes.paperX}>
                   <Graphs/>
+              </Paper>
+            </Grid>
+
+            {/* Recent Action */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+              </Paper>
+            </Grid>
+
+            {/* Recent Key highlights */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
               </Paper>
             </Grid>
           </Grid>

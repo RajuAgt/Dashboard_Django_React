@@ -18,13 +18,13 @@ export default function Deposits() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Projects List</Title>
-      <Typography color="textSecondary" className={classes.depositContext}>
+      <Title>Gemini Projects</Title>
+      <Typography color="#457B9D" className={classes.depositContext}>
         DC Exit Support<br/>
         NTS Optional Charge
       </Typography>
       <div>
-        <Link color="primary" href="/projects" >
+        <Link color="#457B9D" href="/projects" >
           View all Projects
         </Link>
       </div>

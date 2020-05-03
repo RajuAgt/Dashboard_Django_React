@@ -25,7 +25,7 @@ export default function Chart() {
 
   return (
     <React.Fragment>
-      <Title>Projects</Title>
+      <Title style={{color:'#1D3557'}}>Gemini Portfolio Timeline</Title>
       <Outages/>
     </React.Fragment>
   );

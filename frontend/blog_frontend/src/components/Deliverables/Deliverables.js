@@ -62,8 +62,9 @@ const deliverables = props => {
             <StyledTableCell>Deliverable</StyledTableCell>
             <StyledTableCell>Planned Date</StyledTableCell>
             <StyledTableCell>Revised Date</StyledTableCell>
-            <StyledTableCell>Comments</StyledTableCell>
-            <StyledTableCell>RAG Status</StyledTableCell>
+            <StyledTableCell>Delivered Date</StyledTableCell>
+            <StyledTableCell>Status</StyledTableCell>
+            <StyledTableCell>RAG</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -75,6 +76,7 @@ const deliverables = props => {
               <StyledTableCell>{deliverable.deliverableBody}</StyledTableCell>
               <StyledTableCell>{new Date(deliverable.planDate).toDateString()}</StyledTableCell>
               <StyledTableCell>{new Date(deliverable.reviseDate).toDateString()}</StyledTableCell>
+              <StyledTableCell>{new Date(deliverable.deliveredDate).toDateString()}</StyledTableCell>
               <StyledTableCell>{deliverable.comments}</StyledTableCell>
               <TableCell style={{backgroundColor:deliverable.statusRAG}}>{deliverable.statusRAG}</TableCell>
             </StyledTableRow>
