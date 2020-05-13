@@ -19,14 +19,12 @@ import Phases from "../../components/Phases/Phases";
 import Phases0 from "../../components/Phases/Phases0";
 import Copyright from '../../components/UI/Footer/Copyright';
 import Milestone from "../../components/Milestone/Milestone";
+import Developments from "../../components/Developments/Developments";
 
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-
-import Kanban from "./Kanban";
-import CutMap from "./CutMap";
 
 function myFunction() {
   window.print();
@@ -41,7 +39,8 @@ class ProjectBody extends Component {
         risks: null,
         actions: null,
         issues: null,
-        phases: null
+        phases: null,
+        developments: null
     };
 
     getProjectBody = () => {
@@ -112,6 +111,16 @@ class ProjectBody extends Component {
             });
     };
 
+    getDevelopmentsList = () => {
+        AxiosInstance.get("developments/" + this.props.match.params.slug + "/")
+            .then(response => {
+                this.setState({ developments: response.data });
+            })
+            .catch(error => {
+                alert("Error Loading Developments. Try Again..!!");
+            });
+    };
+
 
     renderWholePage = () => {
         this.getProjectBody();
@@ -121,6 +130,7 @@ class ProjectBody extends Component {
         this.getActionsList();
         this.getIssuesList();
         this.getPhasesList();
+        this.getDevelopmentsList();
     };
     componentDidMount() {
         this.renderWholePage();
@@ -197,8 +207,7 @@ class ProjectBody extends Component {
                         </h1>
                     </div>
                     <div className={cssClass.ProjectBodyDivN}>
-                        <Kanban />
-                        <CutMap />
+                        <Developments developmentsList={this.state.developments} />
                     </div>
 
                     <div className={cssClass.ProjectBodyDivN}>
