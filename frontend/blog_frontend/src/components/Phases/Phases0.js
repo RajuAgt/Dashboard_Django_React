@@ -14,18 +14,20 @@ import Paper from '@material-ui/core/Paper';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#1a535c',
     color: theme.palette.common.white,
+    fontFamily: 'Open Sans',
   },
   body: {
     fontSize: 14,
+    fontFamily: 'Open Sans',
   },
 }))(TableCell);
 
 const StyledTableRow = withStyles(theme => ({
   root: {
     '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: '#f5fff5',
     },
   },
 }))(TableRow);
@@ -62,7 +64,9 @@ const phases = props => {
               <StyledTableCell component="th" scope="row">
                 {phase.projectPhase}
               </StyledTableCell>
-              <TableCell style={{backgroundColor:phase.statusRAG}}>{phase.statusRAG}</TableCell>
+              <TableCell style={phase.statusRAG==='Green'?{backgroundColor:'#2a9d8f'}:
+              phase.statusRAG==='Amber'?{backgroundColor:'#f77f00'}:{backgroundColor:'#d62828'}}>
+              {phase.statusRAG}</TableCell>
               <StyledTableCell>{new Date(phase.startDate).toLocaleDateString()}</StyledTableCell>
               <StyledTableCell>{new Date(phase.endDate).toLocaleDateString()}</StyledTableCell>
               <StyledTableCell>{new Date(phase.startDateRev).toLocaleDateString()}</StyledTableCell>

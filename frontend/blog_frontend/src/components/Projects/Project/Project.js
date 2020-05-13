@@ -2,10 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import cssClass from "./Project.css";
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
+import TableBody from '@material-ui/core/TableBody';
 import Button from '@material-ui/core/Button';
+
+const StyledTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+    fontFamily: 'Open Sans',
+  },
+}))(TableCell);
 
 const project = props => {
     const articleClass = [
@@ -16,7 +29,8 @@ const project = props => {
         cssClass.hidden,
         cssClass.ba,
         cssClass.bBlack10,
-        cssClass.mv4
+        cssClass.mv4,
+
     ];
 
     const h1Class = [
@@ -62,19 +76,23 @@ const project = props => {
                 <br />
                 <div className={cssClass.ProjectInfo}>
                     <Table size='small' width='150'>
+                    <TableBody>
                       <TableRow>
-                        <TableCell width='120'>Wipro PM</TableCell>
-                        <TableCell>: {props.author}</TableCell>
+                        <StyledTableCell size='small' fontFamily="Open Sans">Xoserve PM</StyledTableCell>
+                        <StyledTableCell>: {props.clientManager}</StyledTableCell>
                       </TableRow>
+
                       <TableRow>
-                        <TableCell size='small'>Xoserve PM</TableCell>
-                        <TableCell>: {props.clientManager}</TableCell>
+                        <StyledTableCell width='120'>Wipro PM</StyledTableCell>
+                        <StyledTableCell>: {props.author}</StyledTableCell>
                       </TableRow>
+
                       <TableRow>
-                        <TableCell size='small'>Last updated On</TableCell>
-                        <TableCell>:{" "}
-                        {new Date(props.last_edited).toDateString()}</TableCell>
+                        <StyledTableCell size='small'>Last updated On</StyledTableCell>
+                        <StyledTableCell>:{" "}
+                        {new Date(props.last_edited).toDateString()}</StyledTableCell>
                       </TableRow>
+                    </TableBody>
                     </Table>
                 </div>
             </div>

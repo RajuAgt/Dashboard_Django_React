@@ -15,13 +15,15 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
-    flexBasis: '33.33%',
+    fontSize: theme.typography.pxToRem(16),
+    flexBasis: '66.66%',
     flexShrink: 0,
+    fontFamily: 'Open Sans',
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
+    fontFamily: 'Open Sans',
   },
 }));
 
@@ -47,7 +49,7 @@ const issue = props => {
           <Typography className={classes.secondaryHeading}>{new Date(props.publishedOn).toDateString()}</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography style={{fontFamily: 'Open Sans'}}>
             {props.issueBody}
           </Typography>
         </ExpansionPanelDetails>

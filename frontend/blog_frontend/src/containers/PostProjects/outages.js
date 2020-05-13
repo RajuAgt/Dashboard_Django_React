@@ -112,7 +112,8 @@ function outageEventStyleFunc(event, state) {
     switch (state) {
         case "normal":
             return {
-                fill: color
+                fill: color,
+                opacity: 0.6
             };
         case "hover":
             return {
@@ -124,6 +125,10 @@ function outageEventStyleFunc(event, state) {
                 fill: color
             };
         default:
+            return {
+                fill: color,
+                opacity: 0.4
+            };
         //pass
     }
 }

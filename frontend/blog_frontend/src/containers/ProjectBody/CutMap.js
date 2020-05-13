@@ -71,13 +71,13 @@ const deliverables = props => {
 
         <TableHead>
           <TableRow>
-            <StyledTableCell>Category</StyledTableCell>
-            <StyledTableCell>Deliverable</StyledTableCell>
-            <StyledTableCell>Planned Date</StyledTableCell>
-            <StyledTableCell>Revised Date</StyledTableCell>
-            <StyledTableCell>Delivered Date</StyledTableCell>
-            <StyledTableCell>Status</StyledTableCell>
             <StyledTableCell>RAG</StyledTableCell>
+            <StyledTableCell>To DO</StyledTableCell>
+            <StyledTableCell>Coding</StyledTableCell>
+            <StyledTableCell>Code Review</StyledTableCell>
+            <StyledTableCell>Deployment</StyledTableCell>
+            <StyledTableCell>Unit Testing</StyledTableCell>
+            <StyledTableCell>Peer Testing</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>

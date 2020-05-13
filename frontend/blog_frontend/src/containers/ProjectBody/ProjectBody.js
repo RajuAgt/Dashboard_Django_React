@@ -17,12 +17,16 @@ import Issues from "../../components/Issues/Issues";
 import IssueForm from "../CreateIssue/CreateIssue";
 import Phases from "../../components/Phases/Phases";
 import Phases0 from "../../components/Phases/Phases0";
+import Copyright from '../../components/UI/Footer/Copyright';
+import Milestone from "../../components/Milestone/Milestone";
 
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 import Kanban from "./Kanban";
+import CutMap from "./CutMap";
 
 function myFunction() {
   window.print();
@@ -149,11 +153,8 @@ class ProjectBody extends Component {
                         </div>
 
                         <HR />
-                        <p className={cssClass.ProjectBody}>
-                            {this.state.projectBody.projectName}
-                        </p>
-                        <HR />
-                        <Phases />
+                        <Milestone />
+
                         <HR />
 
                         <h1 className={cssClass.TaskHeading}>
@@ -197,6 +198,7 @@ class ProjectBody extends Component {
                     </div>
                     <div className={cssClass.ProjectBodyDivN}>
                         <Kanban />
+                        <CutMap />
                     </div>
 
                     <div className={cssClass.ProjectBodyDivN}>
@@ -218,7 +220,9 @@ class ProjectBody extends Component {
                     <Issues issuesList={this.state.issues} />
 
 
-
+                    <Box pt={4}>
+                      <Copyright />
+                    </Box>
 
                 </Auz>
             );

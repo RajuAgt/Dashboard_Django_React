@@ -1,11 +1,27 @@
 .Logo {
     color: black;
-    font-family: 'Cardo', serif;
-    float: left;
+    font-family: 'Open Sans', 'Cardo', serif;
+    float: center;
     font-size: 30px;
     padding-left: 20px;
     padding-top: 10px;
     padding-right: 5px;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+.LogoX {
+    color: black;
+    font-family: 'Open Sans', 'Cardo', serif;
+    float: center;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 60px;
     cursor: pointer;
     top: 0;
     left: 0;

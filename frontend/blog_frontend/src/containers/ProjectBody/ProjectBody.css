@@ -1,6 +1,6 @@
 .TaskHeading {
     margin-top: 40px;
-    font-family: "Cardo", serif;
+    font-family: "Open Sans";
 }
 .ProjectBodyDiv {
     width: 80%;
@@ -8,6 +8,8 @@
     padding-top: 90px;
     padding-left: 40px;
     padding-right: 40px;
+    font-family: "Open Sans";
+    background-color: rgb(250, 250, 250);
 }
 
 .ProjectBodyDivN {
@@ -16,6 +18,8 @@
     padding-top: 20px;
     padding-left: 40px;
     padding-right: 40px;
+    font-family: "Open Sans";
+
 }
 
 ..ProjectBodyDivNX {
@@ -24,6 +28,7 @@
     padding-top: 5px;
     padding-left: 40px;
     padding-right: 40px;
+    font-family: "Open Sans";
 }
 
 .ProjectBodyDivNM {
@@ -32,17 +37,18 @@
     padding-top: 20px;
     padding-left: 40px;
     padding-right: 40px;
+    font-family: "Open Sans";
 }
 
 .Title {
-    font-family: "Cardo", serif;
+    font-family: "Open Sans", serif;
     color: rgb(32, 32, 32);
 }
 
 .ProjectBody {
     font-size: 1.5em;
     color: rgb(32, 32, 32);
-    font-family: "PT Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 .ProjectInfo {

@@ -9,8 +9,13 @@ function preventDefault(event) {
 }
 
 const useStyles = makeStyles({
-  depositContext: {
+  projectList: {
     flex: 1,
+    fontFamily: 'Open Sans',
+    color: '#457B9D'
+  },
+  projectTitle: {
+    fontFamily: 'Open Sans',
   },
 });
 
@@ -18,13 +23,13 @@ export default function Deposits() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Gemini Projects</Title>
-      <Typography color="#457B9D" className={classes.depositContext}>
+      <Title className={classes.projectList}>Gemini Projects</Title>
+      <Typography className={classes.projectList}>
         DC Exit Support<br/>
         NTS Optional Charge
       </Typography>
       <div>
-        <Link color="#457B9D" href="/projects" >
+        <Link className={classes.projectList} href="/projects" >
           View all Projects
         </Link>
       </div>

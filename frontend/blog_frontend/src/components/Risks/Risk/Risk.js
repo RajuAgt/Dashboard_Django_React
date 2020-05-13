@@ -20,11 +20,13 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(16),
+    fontFamily: 'Open Sans',
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
+    fontFamily: 'Open Sans',
   },
   icon: {
     verticalAlign: 'bottom',
@@ -39,6 +41,8 @@ const useStyles = makeStyles((theme) => ({
   },
   columnBody: {
     flexBasis: '66.66%',
+    fontFamily: 'Open Sans',
+
   },
   helper: {
     borderLeft: `2px solid ${theme.palette.divider}`,
@@ -84,7 +88,7 @@ const risk = props => {
         <Divider />
         <ExpansionPanelDetails className={classes.details}>
           <div className={classes.columnBody}>
-              <b>Risk:</b> {props.riskBody}
+              <b style={{fontFamily: 'Open Sans'}}>Risk:</b> {props.riskBody}
               <br/><br/>
               <b>Mitigation:</b> {props.mitigation}
           </div>

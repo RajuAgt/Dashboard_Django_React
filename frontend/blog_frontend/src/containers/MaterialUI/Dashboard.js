@@ -18,24 +18,17 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Graphs from './Graphs';
+import Copyright from '../../components/UI/Footer/Copyright';
+import Highlights from '../../components/Highlights/Highlights';
+import RiskStatus from '../../components/Risks/RiskStatus';
+import IssueStatus from '../../components/Issues/IssueStatus';
+import ActionStatus from '../../components/Actions/ActionStatus';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://wipro.com/">
-        Wipro Confidential
-      </Link>
-      <Typography variant="body2" color="textSecondary" align="right">
-      {'   '} Last Update on {new Date().toDateString()} {'.'}
-      </Typography>
-    </Typography>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -150,30 +143,42 @@ export default function Dashboard() {
               </Paper>
             </Grid>
             {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={3}>
               <Paper className={fixedHeightPaper}>
                 <Deposits />
               </Paper>
             </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={6}>
+            {/* Recent Risks */}
+            <Grid item xs={3} >
               <Paper className={classes.paperX}>
-                  <Graphs/>
+                  <RiskStatus />
+              </Paper>
+            </Grid>
+
+            {/* Recent Issues */}
+            <Grid item xs={3} >
+              <Paper className={classes.paperX}>
+                  <IssueStatus />
               </Paper>
             </Grid>
 
             {/* Recent Action */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
+            <Grid item xs={3}>
+              <Paper className={classes.paperX}>
+              <ActionStatus />
               </Paper>
             </Grid>
 
             {/* Recent Key highlights */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
+            <Grid item xs={3}>
+              <Paper className={classes.paperX}>
+                <Highlights />
               </Paper>
             </Grid>
-          </Grid>
+          </Grid><br/>
+          <Typography variant="body2" color="textSecondary" align="right">
+          {'   '} Last Update on {new Date().toDateString()} {'.'}
+          </Typography>
           <Box pt={4}>
             <Copyright />
           </Box>

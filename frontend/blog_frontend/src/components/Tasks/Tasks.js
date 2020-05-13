@@ -14,18 +14,20 @@ import Paper from '@material-ui/core/Paper';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#1a535c',
     color: theme.palette.common.white,
+    fontFamily: 'Open Sans',
   },
   body: {
     fontSize: 14,
+    fontFamily: 'Open Sans',
   },
 }))(TableCell);
 
 const StyledTableRow = withStyles(theme => ({
   root: {
     '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: '#f5fff5',
     },
   },
 }))(TableRow);

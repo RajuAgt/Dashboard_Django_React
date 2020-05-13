@@ -5,7 +5,10 @@ import React, { Component } from "react";
 import AxiosInstance from "../../AxiosInstance";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import Projects from "../../components/Projects/Projects";
+import Copyright from '../../components/UI/Footer/Copyright'
 import cssClass from "./ProjectList.css";
+
+import Box from '@material-ui/core/Box';
 
 class ProjectList extends Component {
     state = {
@@ -19,7 +22,7 @@ class ProjectList extends Component {
                 this.setState({ projects: response.data, loading: false })
             )
             .catch(err => console.log("Error From ProjectList.js", err));
-        console.log("Inside ProjectList.js");    
+        console.log("Inside ProjectList.js");
     }
 
     render() {
@@ -28,7 +31,13 @@ class ProjectList extends Component {
             projectList = <Projects projectList={this.state.projects} />;
         }
 
-        return <div className={cssClass.ProjectList}>{projectList}</div>;
+        return (
+          <div className={cssClass.ProjectList}>{projectList}
+          <Box pt={4}>
+            <Copyright />
+          </Box>
+          </div>
+        );
     }
 }
 
