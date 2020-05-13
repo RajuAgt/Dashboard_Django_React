@@ -138,6 +138,13 @@ class ProjectBody extends Component {
 
     render() {
         let projectBody = <Spinner />;
+        const lenDeliverables = !this.state.deliverables?0:this.state.deliverables.length;
+        const lenTasks = !this.state.tasks?0:this.state.tasks.length;
+        const lenPhases = !this.state.phases?0:this.state.phases.length;
+        const lenDevelopments = !this.state.developments?0:this.state.developments.length;
+        const lenRisks = !this.state.risks?0:this.state.risks.length;
+        const lenIssues = !this.state.issues?0:this.state.issues.length;
+
         if (!this.state.loading && this.state.projectBody) {
             projectBody = (
                 <Auz>
@@ -167,25 +174,33 @@ class ProjectBody extends Component {
 
                         <HR />
 
-                        <h1 className={cssClass.TaskHeading}>
-                            Key Highlights: {this.state.projectBody.total_tasks}
-                        </h1>
+
                     </div>
 
-                    <Tasks tasksList={this.state.tasks} />
+                    {lenTasks>0 ?(
+                    <div className={cssClass.ProjectBodyDivN}>
+                        <h1 className={cssClass.TaskHeading}>
+                            Key Highlights: {lenTasks}
+                        </h1>
+                        <Tasks tasksList={this.state.tasks} />
+                    </div>
+                    ):(<div></div>)}
 
+                    {lenPhases>0 ?(
                     <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
                             Detailed Plan:
                         </h1>
+                        <Phases0 phasesList={this.state.phases} />
                     </div>
+                    ):(<div></div>)}
 
-                    <Phases0 phasesList={this.state.phases} />
 
+                    {lenDeliverables>0 ?(
                     <div className={cssClass.ProjectBodyDivN}>
                             <div className={cssClass.containerLeft}>
                                 <h1 className={cssClass.TaskHeading}>
-                                    Deliverables:
+                                    Deliverables: {lenDeliverables}
                                 </h1>
                             </div>
                             <div className={cssClass.containerRight}>
@@ -197,36 +212,40 @@ class ProjectBody extends Component {
                                               sheet="Deliverables"
                                               buttonText="Download"/>
                             </div>
+                          <Deliverables deliverablesList={this.state.deliverables} />
                     </div>
 
-                    <Deliverables deliverablesList={this.state.deliverables} />
 
+                  ):(<div></div>)}
+
+                  {lenDevelopments>0 ?(
+                  <div className={cssClass.ProjectBodyDivN}>
+                      <h1 className={cssClass.TaskHeading}>
+                          Cut Tracker:
+                      </h1>
+                      <Developments developmentsList={this.state.developments} />
+                  </div>
+                  ):(<div></div>)}
+
+                  {lenRisks>0 ?(
                     <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
-                            Cut Tracker:
+                            Risks: {lenRisks}
                         </h1>
+                        <Risks risksList={this.state.risks}/>
                     </div>
-                    <div className={cssClass.ProjectBodyDivN}>
-                        <Developments developmentsList={this.state.developments} />
-                    </div>
-
-                    <div className={cssClass.ProjectBodyDivN}>
-                        <h1 className={cssClass.TaskHeading}>
-                            Risks:
-                        </h1>
-
-                    </div>
-
-                    <Risks risksList={this.state.risks}/>
+                    ):(<div></div>)}
 
 
+                    {lenIssues>0 ?(
                     <div className={cssClass.ProjectBodyDivN}>
                         <h1 className={cssClass.TaskHeading}>
-                            Issues:
+                            Issues: {lenIssues}
                         </h1>
+                        <Issues issuesList={this.state.issues} />
                     </div>
+                    ):(<div></div>)}
 
-                    <Issues issuesList={this.state.issues} />
 
 
                     <Box pt={4}>

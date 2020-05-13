@@ -34,7 +34,7 @@ const StyledTableRow = withStyles(theme => ({
 
 const useStyles = makeStyles({
   table: {
-    width: '80%',
+    width: '100%',
     margin: '25px auto',
   },
 });

@@ -34,7 +34,7 @@ const StyledTableRow = withStyles(theme => ({
 
 const useStyles = makeStyles({
   table: {
-    width: '80%',
+    width: '100%',
     margin: '25px auto',
   },
 });
@@ -55,16 +55,6 @@ const deliverables = props => {
 
   const classes = useStyles();
 
-  function styleFunc(deliverable) {
-      let color = null;
-      if(deliverable.get("statusRAG") === "Green"){
-          color = "	#00FF00";
-      } else if(deliverable.get("statusRAG") === "Amber"){
-          color = "#FFBF00";
-      }else if(deliverable.get("statusRAG") === "Red"){
-          color = "#FF0000";
-      }
-  }
     return (
     <TableContainer>
       <Table className={classes.table} aria-label="customized table" id="table-to-xls">
@@ -98,7 +88,6 @@ const deliverables = props => {
           ))}
         </TableBody>
       </Table>
-
     </TableContainer>
   );
 };
