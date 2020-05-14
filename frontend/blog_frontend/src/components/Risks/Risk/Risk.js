@@ -76,7 +76,7 @@ const risk = props => {
           id="panel1c-header"
         >
           <div className={classes.column}>
-            <Typography className={classes.heading}>{props.riskName}</Typography>
+            <Typography className={classes.heading}>{props.riskID}: {props.riskName}</Typography>
           </div>
           <div className={classes.column}>
 
@@ -99,8 +99,12 @@ const risk = props => {
               {props.impact}
             </Typography><br/>
             <Typography variant="caption">
-              probability:
+              Probability:
               {props.probability}
+            </Typography><br/>
+            <Typography variant="caption">
+              Risk Score:
+              {props.riskScore}
             </Typography><br/>
             <Typography variant="caption">
               Phase Detected:

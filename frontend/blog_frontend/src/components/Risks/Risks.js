@@ -7,12 +7,14 @@ const risks = props => {
     return props.risksList.map(risk => (
         <Auz key={risk.published_on}>
             <Risk
+                riskID={risk.riskID}
                 riskName={risk.riskName}
                 riskBody={risk.riskBody}
                 publishedOn={risk.published_on}
                 phaseDetected={risk.phaseDetected}
                 impact={risk.impact}
                 probability={risk.probability}
+                riskScore={risk.riskScore}
                 owner={risk.owner}
                 prjectPhase={risk.prjectPhase}
                 mitigation={risk.mitigation}

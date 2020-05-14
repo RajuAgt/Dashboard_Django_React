@@ -16,15 +16,17 @@ PROB_OPTIONS = [
 class Risk(models.Model):
     """Model For The Risks for Projects"""
 
+    riskID = models.CharField(max_length=20, null=False, blank=False, default='R001')
     riskName = models.CharField(max_length=100)
     riskBody = models.TextField()
     phaseDetected = models.CharField(max_length=50)
     impact = models.CharField(max_length=20, choices = IMPACT_OPTIONS)
     probability = models.CharField(max_length=20, choices = PROB_OPTIONS)
+    riskScore = models.IntegerField()
     owner = models.CharField(max_length=50)
     prjectPhase = models.CharField(max_length=50)
     mitigation = models.TextField()
-    impactDate = models.DateTimeField()
+    impactDate = models.DateField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE,
                              related_name='risks', related_query_name='risk')
     is_displayed = models.BooleanField(default=True)

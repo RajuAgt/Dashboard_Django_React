@@ -76,3 +76,11 @@
    display: flex;
    justify-content: flex-end;
 }
+
+@media print
+{
+    html
+    {
+        zoom: 50%;
+    }
+}
