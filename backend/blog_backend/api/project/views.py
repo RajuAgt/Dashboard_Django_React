@@ -12,7 +12,7 @@ class ProjectListView(generics.ListAPIView):
 
 
 class ProjectDetailView(generics.RetrieveAPIView):
-    """View For The Details Of A Single Post"""
+    """View For The Details Of A Single Project"""
 
     queryset = Project.objects.all()
     serializer_class = ProjectDetailSerializer

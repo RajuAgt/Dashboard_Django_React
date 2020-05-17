@@ -17,7 +17,7 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import NotificationsIcon from '@material-ui/icons/Notifications'; 
 
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';

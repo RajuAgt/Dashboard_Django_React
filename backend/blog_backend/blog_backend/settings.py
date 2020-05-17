@@ -27,7 +27,7 @@ SECRET_KEY = 'pmtg)_j%ryoicq@%r0h=^mf*(#6x6o1$i7p@a_@3-niy!0q)!g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dashboard-django-react-app1.herokuapp.com']
 
 
 # Application definition
@@ -131,7 +131,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Calcutta'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -144,6 +144,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 SITE_ID = 1
 REST_USE_JWT = True

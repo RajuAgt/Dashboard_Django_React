@@ -1,1 +1,1 @@
-web: gunicorn dashboard-django-react-app1.wsgi
+web: gunicorn backend.blog_backend.blog_backend.wsgi --log-file -

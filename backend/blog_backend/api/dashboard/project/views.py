@@ -99,10 +99,10 @@ def project_update_view(request):
                 return Response({'detail': 'Something Went Wrong.'}, status=status.HTTP_400_BAD_REQUEST)
 
         else:
-            return Response({'detail': 'You Are Not Authorised To Edit This Post'}, status.HTTP_403_FORBIDDEN)
+            return Response({'detail': 'You Are Not Authorised To Edit This Project'}, status.HTTP_403_FORBIDDEN)
 
     else:
-        return Response({'detail': 'You Are Not Authorised To Edit This Post'}, status.HTTP_403_FORBIDDEN)
+        return Response({'detail': 'You Are Not Authorised To Edit This Project'}, status.HTTP_403_FORBIDDEN)
 
 
 @api_view(['DELETE'])
@@ -132,4 +132,4 @@ def project_delete_view(request):
             return Response({'detail': 'Something Went Wrong.'}, status=status.HTTP_400_BAD_REQUEST)
 
     else:
-        return Response({'detail': 'You Are Not Authorised To Edit This Post'}, status.HTTP_403_FORBIDDEN)
+        return Response({'detail': 'You Are Not Authorised To Edit This Project'}, status.HTTP_403_FORBIDDEN)
