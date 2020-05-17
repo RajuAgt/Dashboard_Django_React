@@ -1,1 +1,1 @@
-web: gunicorn Dashboard_Django_React.wsgi
+web: gunicorn dashboard-django-react-app1.wsgi
