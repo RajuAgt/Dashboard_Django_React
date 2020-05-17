@@ -1,1 +1,1 @@
-web: gunicorn blog.wsgi
+web: gunicorn Dashboard_Django_React.wsgi
