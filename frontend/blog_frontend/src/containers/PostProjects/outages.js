@@ -4,6 +4,10 @@ import React from "react/";
 // Pond
 import { TimeSeries, TimeRangeEvent, TimeRange } from "pondjs";
 import { Charts, ChartContainer, ChartRow, EventChart, Resizable } from "react-timeseries-charts";
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
 // Imports from the charts library
 
 //
@@ -114,11 +118,12 @@ function outageEventStyleFunc(event, state) {
             return {
                 fill: color,
                 opacity: 0.6
+
             };
         case "hover":
             return {
                 fill: color,
-                opacity: 0.4
+
             };
         case "selected":
             return {
@@ -127,7 +132,7 @@ function outageEventStyleFunc(event, state) {
         default:
             return {
                 fill: color,
-                opacity: 0.4
+
             };
         //pass
     }
@@ -185,9 +190,24 @@ export default class Outages extends React.Component{
                                 </ChartRow>
                             </ChartContainer>
                         </Resizable>
+                        <br />
+                        <br />
+
 
                     </div>
+
                 </div>
+                <Table>
+                <TableBody>
+                <TableRow>
+                <TableCell style={{color: '#264653',  opacity: 1}}>Completed</TableCell>
+                <TableCell style={{color: '#2a9d8f',  opacity: 1}}>In Track</TableCell>
+                <TableCell style={{color: '#f77f00',  opacity: 1}}>Amber</TableCell>
+                <TableCell style={{color: '#d62828',  opacity: 1}}>Delay</TableCell>
+                <TableCell style={{color: '#8D99AE',  opacity: 1}}>Yet to start</TableCell>
+                </TableRow>
+                </TableBody>
+                </Table>
             </div>
         );
     }
