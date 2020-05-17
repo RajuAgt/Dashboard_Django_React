@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import cssClass from "./HomePage.css";
 
@@ -59,7 +58,7 @@ const HomePage = props => {
                     <li>Details on Risks and Issues at Project level</li>
                     <li>Details on Deliverables and Actions at Project level</li>
                 </ul><br/>
-                
+
                 </p>
 
                 <br />

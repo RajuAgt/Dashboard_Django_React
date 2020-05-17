@@ -9,8 +9,8 @@ const logo = () => (
     <div>
     <Link style={{ textDecoration: "none" }} to="/">
         {" "}
-        <span className={cssClass.Logo}><img src={Logo} height="50px"/>|
-        <img src={LogoX} height="25px" padding-top="30px"/>
+        <span className={cssClass.Logo}><img alt='' src={Logo} height="50px"/>|
+        <img alt='' src={LogoX} height="25px" padding-top="30px"/>
         <span text-align='center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Gemini & Integration Platform Dashboard</span>

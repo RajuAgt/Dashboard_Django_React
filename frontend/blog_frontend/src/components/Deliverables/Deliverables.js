@@ -1,8 +1,5 @@
 import React from "react";
 
-import Deliverable from "./Deliverable/Deliverable";
-import Auz from "../../hoc/Auz/Auz";
-
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,7 +7,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -38,17 +34,6 @@ const useStyles = makeStyles({
     margin: '25px auto',
   },
 });
-
-function styleFunc(deliverable) {
-    let color = null;
-    if(deliverable.get("statusRAG") === "Green"){
-        color = "	#00FF00";
-    } else if(deliverable.get("statusRAG") === "Amber"){
-        color = "#FFBF00";
-    }else if(deliverable.get("statusRAG") === "Red"){
-        color = "#FF0000";
-    }
-}
 
 
 const deliverables = props => {

@@ -1,13 +1,8 @@
 // Post List For Homepage
 
 import React, { Component } from "react";
-import {XYPlot, XAxis, YAxis, HorizontalGridLines, HorizontalBarSeries, LineSeries} from 'react-vis';
 
 import AxiosInstance from "../../AxiosInstance";
-import Spinner from "../../components/UI/Spinner/Spinner";
-import cssClass from "./PostProjects.css";
-import Timeline from "./timeline"
-import Outages from "./outages"
 import Dashboard from "./../MaterialUI/Dashboard"
 
 class PostList extends Component {
