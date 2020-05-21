@@ -27,7 +27,7 @@ SECRET_KEY = 'pmtg)_j%ryoicq@%r0h=^mf*(#6x6o1$i7p@a_@3-niy!0q)!g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dashboard-django-react-app1.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
