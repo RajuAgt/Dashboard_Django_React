@@ -8,6 +8,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+import LineChart from './LineChart';
+
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: '#1a535c',
@@ -42,6 +44,7 @@ const developments = props => {
 
     return (
     <TableContainer>
+    <LineChart /><hr/>
       <Table className={classes.table} aria-label="customized table" id="table-to-xls">
 
         <TableHead>
