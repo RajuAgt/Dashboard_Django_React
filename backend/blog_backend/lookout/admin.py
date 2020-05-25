@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Deliverable
+from .models import Lookout
 
 
-admin.site.register(Deliverable)
+admin.site.register(Lookout)

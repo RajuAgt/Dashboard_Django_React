@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class DeliverableConfig(AppConfig):
-    name = 'deliverable'
+class LookoutConfig(AppConfig):
+    name = 'lookout'

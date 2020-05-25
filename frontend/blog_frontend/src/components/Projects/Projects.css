@@ -10,3 +10,13 @@
     margin-top: -2em; /*set to a negative number 1/2 of your height*/
     margin-left: -3.5em; /*set to a negative number 1/2 of your width*/
 }
+
+.projectList: {
+  flex: 1;
+  font-family: 'Open Sans';
+  color: '#457B9D';
+}
+
+.projectTitle: {
+  font-family: 'Open Sans';
+}

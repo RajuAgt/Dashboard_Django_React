@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'issue',
     'phase',
     'development',
+    'lookout',
     'corsheaders',
     'user_profile',
     'rest_framework.authtoken',

@@ -1,3 +1,72 @@
-.PostList {
-    margin: 100px 20px;
+.root: {
+  display: 'flex',
+}
+
+.toolbar: {
+  padding-right: 24,
+}
+
+.toolbarIcon: {
+  display: 'flex';
+  align-items: 'center';
+  justify-content: 'flex-end';
+  padding: '0 8px';
+}
+
+.menuButton: {
+  margin-right: 36,
+}
+
+.menuButtonHidden: {
+  display: 'none',
+}
+
+.title: {
+  flex-grow: 1,
+}
+
+
+.appBarSpacer: theme.mixins.toolbar,
+content: {
+  flex-grow: 1;
+  height: 100vh;
+  overflow: auto;
+
+},
+
+.container: {
+  padding-top: theme.spacing(4);
+  padding-bottom: theme.spacing(4);
+}
+
+.paper: {
+  padding: theme.spacing(2);
+  display: 'flex';
+  overflow: 'auto';
+  flex-direction: 'column';
+  border-style: 'none';
+  background-color: '#fafafa';
+}
+
+.paperX {
+  padding: theme.spacing(2);
+  display: 'flex';
+  overflow: 'auto';
+  flex-direction: 'column';
+  height: 300;
+  background-color: '#fafafa';
+}
+
+.fixedHeight: {
+  height: 240;
+}
+
+.fixedHeightPaper: {
+  padding: theme.spacing(2);
+  display: 'flex';
+  overflow: 'auto';
+  flex-direction: 'column';
+  height: 240;
+  border-style: 'none';
+  background-color: 'red';
 }

@@ -56,7 +56,7 @@ export default class SimpleRadialChart extends Component {
             </TableRow>
             <TableRow>
 
-                <TableCell align='center'>Risks</TableCell>
+                <TableCell align='center'>Risks1</TableCell>
                 <TableCell align='center'>Issues</TableCell>
             </TableRow>
           </TableBody>
