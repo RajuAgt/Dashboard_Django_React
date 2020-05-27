@@ -19,3 +19,11 @@ class RiskCreateSerializer(serializers.ModelSerializer):
         model = Risk
         fields = ['riskID', 'riskName', 'riskBody', 'project', 'riskBody', 'phaseDetected', 'impact', 'probability',
         'riskScore', 'owner', 'prjectPhase', 'mitigation', 'impactDate']
+
+
+class RiskStatusSerializer(serializers.ModelSerializer):
+    """DRF Serializer For Listing Published Risk"""
+
+    class Meta:
+        model = Risk
+        fields = ['impact', 'angle', 'name']

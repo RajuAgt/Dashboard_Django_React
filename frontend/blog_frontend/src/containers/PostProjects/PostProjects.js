@@ -18,7 +18,7 @@ import Paper from '@material-ui/core/Paper';
 import Chart from '../MaterialUI/Chart';
 import Deposits from '../MaterialUI/Deposits';
 import Graphs from '../MaterialUI/Graphs';
-import RiskStatus from '../../components/Risks/RiskStatus';
+import RiskStatusX from '../../components/Risks/RiskStatusX';
 import IssueStatus from '../../components/Issues/IssueStatus';
 import ActionStatus from '../../components/Actions/ActionStatus';
 import Lookouts from "../../components/Lookouts/Lookouts";
@@ -53,9 +53,20 @@ class PostList extends Component {
             });
     };
 
+    getRisksList = () => {
+        AxiosInstance.get("risks/")
+            .then(response => {
+                this.setState({ risks: response.data });
+            })
+            .catch(error => {
+                alert("Error Loading Lookouts. Try Again..!!");
+            });
+    };
+
     renderWholePage = () => {
         this.getProjects();
         this.getLookoutsList();
+        this.getRisksList();
     };
 
     componentDidMount() {
@@ -66,6 +77,7 @@ class PostList extends Component {
     render() {
         let projects = <Spinner />;
         const lenLookouts = !this.state.lookouts?0:this.state.lookouts.length;
+        const lenRisks = !this.state.risks?0:this.state.risks.length;
 
 
 
@@ -95,7 +107,11 @@ class PostList extends Component {
                         {/* Recent Risks */}
                         <Grid item xs={3} >
                           <Paper className={cssClass.paperX}>
-                              <RiskStatus />
+                            {lenRisks>0 ?(
+                            <div>
+                              <RiskStatusX risksList = {this.state.risks}/>
+                              </div>
+                              ):(<div></div>)}
                           </Paper>
                         </Grid>
 

@@ -24,7 +24,7 @@ const projectsNames = props => {
 
     return (
       <React.Fragment>
-        <Title style={{backgroundColor:'red'}}>Gemini Projects</Title>
+        <Title className={classes.projectList}>Gemini Projects</Title>
 
       {props.projectList.map(project => (
         <Typography className={classes.projectList}>{project.projectTitle}</Typography>
