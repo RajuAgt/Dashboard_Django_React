@@ -8,7 +8,7 @@ class IssueSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Issue
-        fields = ['issueName', 'website', 'issueBody', 'published_on']
+        fields = ['issueName', 'website', 'issueBody', 'impact', 'published_on']
 
 
 class IssueCreateSerializer(serializers.ModelSerializer):
@@ -16,4 +16,12 @@ class IssueCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Issue
-        fields = ['issueName', 'website', 'issueBody', 'project', 'email']
+        fields = ['issueName', 'website', 'issueBody', 'impact', 'project', 'email']
+
+
+class IssueStatusSerializer(serializers.ModelSerializer):
+    """DRF Serializer For Listing Published Issue"""
+
+    class Meta:
+        model = Issue
+        fields = ['impact', 'angle', 'name']

@@ -19,7 +19,7 @@ import Chart from '../MaterialUI/Chart';
 import Deposits from '../MaterialUI/Deposits';
 import Graphs from '../MaterialUI/Graphs';
 import RiskStatusX from '../../components/Risks/RiskStatusX';
-import IssueStatus from '../../components/Issues/IssueStatus';
+import IssueStatusX from '../../components/Issues/IssueStatusX';
 import ActionStatus from '../../components/Actions/ActionStatus';
 import Lookouts from "../../components/Lookouts/Lookouts";
 import ProjectsNames from "../../components/Projects/ProjectsNames";
@@ -31,7 +31,9 @@ class PostList extends Component {
     state = {
         loading: true,
         projectBody: null,
-        lookouts: null
+        lookouts: null,
+        risks:null,
+        issues:null
     };
 
     getProjects = () => {
@@ -63,10 +65,21 @@ class PostList extends Component {
             });
     };
 
+    getIssuesList = () => {
+        AxiosInstance.get("issues/")
+            .then(response => {
+                this.setState({ issues: response.data });
+            })
+            .catch(error => {
+                alert("Error Loading Issues. Try Again..!!");
+            });
+    };
+
     renderWholePage = () => {
         this.getProjects();
         this.getLookoutsList();
         this.getRisksList();
+        this.getIssuesList();
     };
 
     componentDidMount() {
@@ -78,6 +91,7 @@ class PostList extends Component {
         let projects = <Spinner />;
         const lenLookouts = !this.state.lookouts?0:this.state.lookouts.length;
         const lenRisks = !this.state.risks?0:this.state.risks.length;
+        const lenIssues = !this.state.issues?0:this.state.issues.length;
 
 
 
@@ -118,7 +132,11 @@ class PostList extends Component {
                         {/* Recent Issues */}
                         <Grid item xs={3} >
                           <Paper className={cssClass.paperX}>
-                              <IssueStatus />
+                              {lenIssues>0 ?(
+                              <div>
+                                <IssueStatusX issuesList = {this.state.issues}/>
+                                </div>
+                                ):(<div></div>)}
                           </Paper>
                         </Grid>
 

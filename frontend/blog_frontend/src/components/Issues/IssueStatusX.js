@@ -23,7 +23,7 @@ function outageEventStyleFunc(d) {
 }
 
 
-export default class RiskStatusX extends Component {
+export default class IssueStatusX extends Component {
   state = {
     value: false
   };
@@ -40,7 +40,7 @@ export default class RiskStatusX extends Component {
                 <TableCell>
                     <RadialChart colorType={'literal'} colorDomain={[0, 100]} colorRange={[0, 10]} margin={{top: 100}}
                     getLabel={d => d.name}
-                    data={this.props.risksList}
+                    data={this.props.issuesList}
                     labelsRadiusMultiplier={1.1}
                     labelsStyle={{fontSize: 16, fill: '#222'}}
                     showLabels
@@ -51,7 +51,7 @@ export default class RiskStatusX extends Component {
             </TableRow>
             <TableRow>
 
-                <TableCell align='center'>Risks</TableCell>
+                <TableCell align='center'>Issues</TableCell>
             </TableRow>
           </TableBody>
       </Table>

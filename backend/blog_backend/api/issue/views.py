@@ -5,6 +5,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+from django.db.models import Count
+
 from .serializers import IssueSerializer, IssueCreateSerializer
 from issue.models import Issue
 from project.models import Project
@@ -28,3 +30,10 @@ def issue_create_view(request, slug):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def issue_status_view(request):
+    issue_list = Issue.objects.filter(is_displayed=True).values('impact').annotate(angle=Count('impact'), name=Count('impact')).order_by('impact')
+    #serializer = RiskStatusSerializer(risk_list, many=True)
+    return Response(issue_list, status=status.HTTP_200_OK)
