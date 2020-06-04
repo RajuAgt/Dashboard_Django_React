@@ -4,6 +4,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
 
+
+import Table from '@material-ui/core/Table';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+
 function preventDefault(event) {
   event.preventDefault();
 }
@@ -23,7 +28,9 @@ export default function Deposits() {
   const classes = useStyles();
   return (
     <React.Fragment>
+    <Table><TableRow><TableCell>
       <Title className={classes.projectList}>Gemini Projects</Title>
+      </TableCell></TableRow></Table>
       <Typography className={classes.projectList}>
         DC Exit Support<br/>
         NTS Optional Charge

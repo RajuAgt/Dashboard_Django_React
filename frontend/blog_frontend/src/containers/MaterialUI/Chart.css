@@ -1,0 +1,29 @@
+.root: {
+  width: '100%';
+  padding: 0;
+}
+
+.details: {
+  align-items: 'center';
+}
+
+.rowC: {
+  display:flex;
+  flex-direction:row;
+}
+
+.column: {
+  flex-basis: '33.33%';
+}
+
+.columnBody: {
+  flex-basis: '66.66%';
+  font-family: 'Open Sans';
+
+}
+
+.helper: {
+  flex-basis: '33.33%';
+  border-left: `2px solid`;
+  padding: theme.spacing(1, 2);
+}

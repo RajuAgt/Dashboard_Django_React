@@ -1,8 +1,6 @@
 import React from "react/";
 //import createReactClass from "create-react-class";
 
-import { format } from "d3-format";
-
 // Pond
 import { TimeSeries, TimeRangeEvent, TimeRange } from "pondjs";
 import { Charts, ChartContainer, ChartRow, EventChart, Resizable } from "react-timeseries-charts";
@@ -94,14 +92,6 @@ events = projectEventsNOCC.map(
 
 const seriesNOCC = new TimeSeries( { name: "outages", events } );
 
-const trackerStyle = {
-    line: {
-        stroke: "#a62011",
-        cursor: "crosshair",
-        pointerEvents: "none"
-    }
-};
-
 //
 // Render event chart
 //
@@ -127,7 +117,7 @@ function outageEventStyleFunc(event, state) {
         case "normal":
             return {
                 fill: color,
-                opacity: 0.8
+                opacity: 0.6
 
             };
         case "hover":
@@ -152,52 +142,26 @@ export default class Outages extends React.Component{
     constructor() {
       super()
       this.state ={
-          tracker: new Date(),
-          timerange: new TimeRange(new Date().getTime()-8000000011, new Date().getTime()+8000000011)
+          tracker: null,
+          timerange: seriesDCExit.timerange()
       }
       this.handleTrackerChanged = this.handleTrackerChanged.bind(this)
       this.handleTimeRangeChange = this.handleTimeRangeChange.bind(this)
     }
-    handleTrackerChanged = (t, scale) => {
-        this.setState({
-          tracker: t,
-          trackerX: t && scale(t)
-        });
-    };
+    handleTrackerChanged(tracker) {
+        this.setState({ tracker });
+    }
     handleTimeRangeChange(timerange) {
         this.setState({ timerange });
     }
     render() {
-
-        const markerStyle = {
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
-            color: "#AAA",
-            marginLeft: "5px"
-        };
-        const axistype = "linear";
-        const tracker = this.state.tracker ? `${this.state.tracker}` : "Track";
-        const formatter = format(".4s");
-
         return (
             <div>
                 <div className="row">
                     <div claOutagesssName="col-md-12">
-
-                        {this.state.tracker ? (
-                            <div style={{ position: "relative" }}>
-                                <div style={{ position: "absolute", left: this.state.trackerX }}>
-                                    <div style={markerStyle}>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        ) : null}
                         <Resizable>
                             <ChartContainer
                                 timeRange={this.state.timerange}
-                                trackerPosition={this.state.tracker}
-                                trackerStyle={trackerStyle}
                                 enablePanZoom={true}
                                 onTimeRangeChanged={this.handleTimeRangeChange}
                             >

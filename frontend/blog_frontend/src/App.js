@@ -6,6 +6,7 @@ import * as actions from "./store/actions/index";
 import cssClass from "./App.css";
 import Layout from "./hoc/Layout/Layout";
 import PostProjects from "./containers/PostProjects/PostProjects";
+import Dashboard from "./containers/MaterialUI/Dashboard";
 import ProjectList from "./containers/ProjectList/ProjectList";
 import ProjectBody from "./containers/ProjectBody/ProjectBody";
 import HomePage from "./containers/HomePage/HomePage";
@@ -148,7 +149,7 @@ class App extends Component {
                 <Route path="/dashboard" component={asyncDashboard} />
                 <Route path="/projects/view/:slug/" component={ProjectBody} />
                 <Route path="/projects" component={ProjectList} />
-                <Route path="/" component={PostProjects} />
+                <Route path="/" component={Dashboard} />
             </Switch>
         );
 
