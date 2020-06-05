@@ -1,21 +1,11 @@
 import React, {Component} from 'react';
 
-import {RadialChart, Hint} from 'react-vis';
-
-import { render } from "react-dom";
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-
+import {RadialChart} from 'react-vis';
 
 export default class ProjectStatus extends Component {
-  state = {
-    value: false
-  };
+
   render() {
-    const {value} = this.state;
+
     return (
 
               <RadialChart colorType={'literal'} colorDomain={[0, 100]} colorRange={[0, 10]}

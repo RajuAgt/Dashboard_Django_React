@@ -1,7 +1,7 @@
 import React from "react";
 
 import cssClass from "./Projects.css";
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
 import Link from '@material-ui/core/Link';

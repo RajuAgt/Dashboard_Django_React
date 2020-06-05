@@ -1,21 +1,17 @@
 import React, {Component} from 'react';
 
-import {RadialChart, Hint} from 'react-vis';
+import {RadialChart} from 'react-vis';
 
-import { render } from "react-dom";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 
 export default class SimpleRadialChart extends Component {
-  state = {
-    value: false
-  };
+
   render() {
-    const {value} = this.state;
+    
     return (
       <div>
 

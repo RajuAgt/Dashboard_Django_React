@@ -13,7 +13,6 @@ import {
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 export default class Example extends React.Component {
@@ -23,7 +22,6 @@ export default class Example extends React.Component {
   render() {
     const {useCanvas} = this.state;
     const BarSeries = useCanvas ? VerticalBarSeriesCanvas : VerticalBarSeries;
-    const content = useCanvas ? 'TOGGLE TO SVG' : 'TOGGLE TO CANVAS';
     const data = [[{x: 'Wipro', y: 10}, {x: 'Xoserve', y: 5}, {x: 'ECMS', y: 15}],
                  [{x: 'Wipro', y: 12}, {x: 'Xoserve', y: 2}, {x: 'ECMS', y: 11}],
                  [{x: 'Wipro', y: 12}, {x: 'Xoserve', y: 2}, {x: 'ECMS', y: 11}]];
