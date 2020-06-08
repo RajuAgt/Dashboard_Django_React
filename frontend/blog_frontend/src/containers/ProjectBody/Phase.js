@@ -87,22 +87,17 @@ console.log("Inside Tom");
      var ref_value = this.props.ref_value;
 
         if(tomsdate>=this.props.p && tomsdate<=data){
-        this.onNext_value();
+        this.onNext_value;
         }
         else{
-        this.onRef_value();
+        this.onRef_value;
         }
-
+      console.log('flat = '+flag);
       if(flag==='true'){
         return   <Nibble next_value={this.props.next_value}/>;
       }
-      return <Nibble next_value={this.props.next_value}/>;
-  //     <Nibble next_value={0}/>
-//       <div></div>
-  //    );
-//        <Greeting next_value={next_value} ref_value={ref_value}/>
-//                <Nibble next_value={0}/>
-//            );
+      return null;
+
     }
 }
 

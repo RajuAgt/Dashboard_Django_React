@@ -20,6 +20,7 @@ import Phases0 from "../../components/Phases/Phases0";
 import Copyright from '../../components/UI/Footer/Copyright';
 import Milestone from "../../components/Milestone/Milestone";
 import Developments from "../../components/Developments/Developments";
+import Phase from "./Phase";
 
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
@@ -173,7 +174,6 @@ class ProjectBody extends Component {
                         <Milestone />
 
                         <HR />
-
 
                     </div>
 
