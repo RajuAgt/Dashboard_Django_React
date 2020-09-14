@@ -12,7 +12,7 @@ const logo = () => (
         <img alt='' src="https://static.djangoproject.com/img/logos/django-logo-positive.png" height="40px" padding-top="30px"/>
         <span text-align='center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Gemini & Integration Platform Dashboard</span>
+        Project & Integration Platform Dashboard</span>
         </span>
     </Link>
 

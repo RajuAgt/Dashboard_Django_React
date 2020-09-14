@@ -33,6 +33,7 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
+    "pondjs": "0.9.0",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
@@ -115,7 +116,6 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0",
-    "pondjs": "^0.9.0"
+    "gh-pages": "^1.2.0"
   }
 }

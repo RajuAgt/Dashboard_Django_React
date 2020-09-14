@@ -37,23 +37,23 @@ const HomePage = props => {
 
     return (
         <article className={articleClass.join(" ")}>
-            <h1 className={h1Class.join(" ")}>Gemini Projects Portfolio</h1>
+            <h1 className={h1Class.join(" ")}>Projects Portfolio</h1>
             <div className={articleDivClass.join(" ")}>
                 <p className={articlePClass.join(" ")}>
-                Gemini is a suite of online applications used by National Grid and its business associates to manage the transport of gas through pipelines.
+                Application Details
                 <br/>
-                Gemini includes applications for essential gas market processes:
+                The Project Application includes below processes:
                 <br/>
                 <ul>
-                    <li>Capacity Management</li>
-                    <li>Capacity Trading</li>
-                    <li>Commercial Balancing</li>
-                    <li>Billing</li>
+                    <li>Application Module 1</li>
+                    <li>Application Module 2</li>
+                    <li>Application Module 3</li>
+                    <li>Application Module 4</li>
                 </ul><br/>
                 This Project Portfolio provides updates on the below:
                 <br/>
                 <ul>
-                    <li>Current Gemini Projects orevall status</li>
+                    <li>Current Projects orevall status</li>
                     <li>Provide Project-wise Phase status</li>
                     <li>Details on Risks and Issues at Project level</li>
                     <li>Details on Deliverables and Actions at Project level</li>
